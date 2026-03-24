@@ -14,6 +14,7 @@ export interface NewsItem {
   id: string;
   title: string;
   description: string;
+  content?: string;
   image: string;
   category: string;
   date: string;
@@ -212,23 +213,97 @@ export const PRODUCTS: Product[] = [
 export const NEWS: NewsItem[] = [
   {
     id: '1',
-    title: 'Komitmen Mutu dan Inovasi dalam Industri Fiberglass Nasional',
-    description: 'PT. Toyoda Fiber Indonesia terus berinovasi dalam menghadirkan produk fiberglass berkualitas tinggi dengan standar internasional untuk mendukung pembangunan infrastruktur di Indonesia.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALDenaFmsy0lfaoxD7ET9naMUz6_R03yxx8UzqX-qwiUdvV_2yy3HeEZw6IshBMxVwJaH5izzl28UtjE8SRUl6TF7TlCMMWqYt1vNZjd4H6WcBLPSAw61RcCOCGYg6Nts16zGhchuPN6M-l7h8zLAjyBvB3jD8NhHJ6a5q3SxplVdPwr5WnQjWoGrm_J2RT53UIJwr5I_7gnPXoelXvtQFLUW3Df7ZnpYddc85F0DP7HMa18jrpIi14SNpjU7OMBRC_oX69WuuVQ',
+    title: 'Komitmen Mutu dan Inovasi dalam Industri Fiberglass Nasional – Toyoda Fiber Indonesia',
+    description: 'Beroperasi selama lebih dari satu dekade, PT Toyoda Fiber Indonesia telah mengukuhkan posisinya sebagai produsen fiberglass terdepan di Indonesia.',
+    content: `Beroperasi selama lebih dari satu dekade, PT Toyoda Fiber Indonesia telah mengukuhkan posisinya sebagai produsen fiberglass terdepan di Indonesia. Berdiri sejak tahun 2010, perusahaan ini terus menunjukkan perkembangan pesat dengan tetap berpegang pada prinsip utama yaitu kualitas, pelayanan, serta inovasi berkelanjutan.
+
+Perusahaan yang beralamat di Jl. Raya Belimbing No.200, Kosambi, Tangerang, Banten, menawarkan berbagai jenis produk fiberglass yang dirancang untuk kebutuhan infrastruktur, industri, dan perumahan. Fokus utama perusahaan adalah menghasilkan produk berstandar tinggi, baik dalam hal desain, daya tahan, hingga efisiensi penggunaan.
+
+Produk-produk andalan PT Toyoda Fiber Indonesia mencakup:
+
+- IPAL – WWTP dan STP: Menjawab kebutuhan sistem pengolahan air limbah di berbagai sektor.
+- Septic Tank & Panel Tank: Solusi pengolahan air limbah rumah tangga dan gedung bertingkat.
+- Storage Tank & Talang: Didesain untuk penampungan cairan, termasuk air dan bahan kimia.
+- Toilet Portable: Praktis dan higienis untuk kebutuhan lokasi proyek, wisata, dan area publik.
+- Atap Fiberglass: Memberikan penerangan alami serta ketahanan terhadap suhu dan cuaca ekstrem.
+
+Dengan dukungan sertifikasi lengkap seperti ISO, SNI, dan KAN, PT Toyoda Fiber Indonesia memastikan setiap produk telah melewati proses pengujian ketat dan layak untuk digunakan dalam jangka panjang. Perusahaan juga telah mendaftarkan hak paten atas mereknya, menandakan komitmen dalam menjaga orisinalitas dan kualitas inovasi produk.
+
+Tidak hanya fokus pada produksi, Toyoda Fiber juga sangat memperhatikan pelayanan pelanggan. Mulai dari proses pemesanan, produksi custom, pengiriman, hingga layanan after sales, semuanya dilakukan dengan profesional dan cepat. Hal ini menjadikan Toyoda Fiber sebagai mitra terpercaya dalam berbagai proyek pemerintah dan swasta.
+
+PT Toyoda Fiber Indonesia terus mendorong semangat inovasi dan keberlanjutan dalam setiap produknya, demi mendukung kemajuan pembangunan di Indonesia.
+
+Kontak kami :
+Whatsapp / Telp: 08111999777
+Email: toyodafiber.id@gmail.com
+Website: www.toyodafibreglass.com`,
+    image: '/artikel3.jpg',
     category: 'Artikel',
-    date: '15 Maret 2024',
+    date: '30 April 2025',
     readTime: '5 Menit'
   },
   {
     id: '2',
-    title: 'Solusi Infrastruktur Modern & Ramah Lingkungan',
-    description: 'Penerapan sistem IPAL dan Septic Tank Bio dari PT. Toyoda Fiber Indonesia membantu menciptakan lingkungan yang lebih bersih dan sehat bagi masyarakat luas.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOi2zr9vn_GIBBZgkcheeIcvOAFUQudtcuJ62vCY9S_0YTrdnigkJLgb-Oj7kS-mtbwOijgO-dOjLs_ACrh2akWDCb4FFn7Lsdcdg-ewW1pkOfhQQMP2ZbgtNv3JOIk5zI3csL2-n8dgtovR-Fen_7NudBMjfmaC4bpnNc4S9uR9pzp49jRTSDlKkxYIAAzs-h2sByjpFWSkT302uqdHScSaL40FcuebDwR0plZtCo8aFoGCe2eLMNh_3amqhzzPtM8ulBabw66A',
+    title: 'Solusi Infrastruktur Modern & Ramah Lingkungan Bersama PT Toyoda Fiber Indonesia',
+    description: 'Di tengah tuntutan akan infrastruktur yang efisien, tahan lama, dan ramah lingkungan, PT Toyoda Fiber Indonesia hadir sebagai jawaban dengan produk-produk berbahan dasar fiberglass.',
+    content: `Di tengah tuntutan akan infrastruktur yang efisien, tahan lama, dan ramah lingkungan, PT Toyoda Fiber Indonesia hadir sebagai jawaban dengan produk-produk berbahan dasar fiberglass yang terbukti unggul dari segi kualitas dan ketahanan. Didirikan sejak tahun 2010, perusahaan ini telah menunjukkan pertumbuhan signifikan berkat konsistensinya dalam menjaga standar mutu internasional serta orientasi terhadap kepuasan pelanggan.
+
+Fiberglass, sebagai bahan utama dalam setiap produk Toyoda Fiber, dikenal memiliki banyak kelebihan dibandingkan bahan konvensional seperti beton atau logam. Fiberglass tidak mudah berkarat, ringan, namun tetap kokoh, serta mampu bertahan dalam kondisi cuaca ekstrem. Kombinasi ini menjadikannya pilihan ideal untuk berbagai kebutuhan bangunan dan fasilitas industri.
+
+PT Toyoda Fiber Indonesia memproduksi berbagai solusi infrastruktur seperti :
+
+- IPAL & STP: Untuk pengolahan limbah domestik dan industri secara efektif, mendukung program pelestarian lingkungan.
+- Septic Tank dan Panel Tank: Solusi penampungan air dan limbah dengan kapasitas bervariasi dan desain fleksibel.
+- Storage Tank & Talang Air: Tahan terhadap zat kimia dan cocok digunakan di lingkungan industri.
+- Toilet Portable: Cocok untuk kebutuhan proyek konstruksi, event outdoor, dan area publik.
+- Atap Fiberglass: Tahan panas, ringan, dan memberikan pencahayaan alami.
+
+Dengan sertifikasi SNI, ISO, dan KAN, serta dukungan hak paten merek, PT Toyoda Fiber Indonesia menjamin kualitas dan keandalan setiap produk yang keluar dari pabriknya. Tidak hanya itu, layanan purna jual dan garansi juga menjadi bagian penting dari nilai tambah perusahaan ini.
+
+Kualitas produk Toyoda Fiber telah dibuktikan melalui implementasi di berbagai proyek nasional maupun swasta, mulai dari perumahan skala besar, fasilitas industri, pabrik, hingga perusahaan energi dan lingkungan. Dukungan tim teknis yang profesional juga menjadikan setiap proyek berjalan optimal.
+
+Hubungi kami untuk konsultasi dan penawaran :
+Telp / WA: 08111999777
+Email: toyodafiber.id@gmail.com
+Website: www.toyodafibreglass.com`,
+    image: '/artikel2.jpg',
     category: 'Inovasi',
-    date: '10 Maret 2024',
+    date: '30 April 2025',
     readTime: '4 Menit'
+  },
+  {
+    id: '3',
+    title: 'PT Toyoda Fiber Indonesia – Produsen Fiberglass Berkualitas dengan Standar Internasional',
+    description: 'Sejak didirikan pada tahun 2010, PT Toyoda Fiber Indonesia telah menjadi pionir dalam industri manufaktur produk berbahan dasar fiberglass di Indonesia.',
+    content: `Sejak didirikan pada tahun 2010, PT Toyoda Fiber Indonesia telah menjadi pionir dalam industri manufaktur produk berbahan dasar fiberglass di Indonesia. Berlokasi di Jl. Raya Belimbing No.200, Belimbing, Kosambi, Kabupaten Tangerang, Banten 15212, perusahaan ini dikenal luas sebagai penyedia solusi fiberglass berkualitas tinggi, dengan komitmen utama pada kepuasan pelanggan, kualitas produk, serta layanan purna jual yang maksimal.
+
+PT Toyoda Fiber Indonesia hadir dengan visi untuk memenuhi kebutuhan infrastruktur dan industri akan produk fiberglass yang kuat, tahan lama, dan efisien. Dengan mengedepankan bahan baku terbaik, teknologi manufaktur terkini, serta dukungan tenaga ahli berpengalaman, perusahaan ini mampu menghasilkan produk-produk berstandar tinggi yang telah mendapatkan sertifikasi SNI, ISO, dan KAN, serta paten merek resmi yang menambah nilai eksklusif bagi setiap produk yang dipasarkan.
+
+Beberapa produk unggulan yang diproduksi oleh PT Toyoda Fiber Indonesia antara lain:
+
+- IPAL – WWTP (Instalasi Pengolahan Air Limbah / Waste Water Treatment Plant)
+- STP (Sewage Treatment Plant)
+- Panel Tank & Septic Tank
+- Storage Tank & Talang Air
+- Toilet Portable & Modular
+- Atap Fiberglass berkualitas tinggi
+
+Produk-produk ini tidak hanya digunakan oleh masyarakat umum, namun juga telah dipercaya oleh perusahaan dan industri ternama di seluruh Indonesia. Komitmen pada mutu dan ketahanan membuat produk dari Toyoda Fiber menjadi pilihan utama dalam berbagai proyek pembangunan, baik itu proyek perumahan, industri, rumah sakit, hingga perkantoran.
+
+PT Toyoda Fiber Indonesia juga memberikan layanan konsultasi dan penyesuaian produk sesuai kebutuhan konsumen. Tidak hanya sekadar menjual, tetapi memberikan solusi menyeluruh, mulai dari desain, produksi, instalasi, hingga perawatan pasca pemasangan.
+
+Untuk informasi lebih lanjut dan pemesanan, Anda dapat menghubungi:
+
+Whatsapp / Telephone: 08111999777
+Email: toyodafiber.id@gmail.com
+Website: www.toyodafibreglass.com`,
+    image: '/artikel1.jpg',
+    category: 'Artikel',
+    date: '30 April 2025',
+    readTime: '5 Menit'
   }
 ];
+
 
 export const PROJECTS: Project[] = [
   {
