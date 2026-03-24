@@ -68,7 +68,7 @@ export default function Home() {
               <img 
                 alt="Industrial Fiberglass" 
                 className="w-full h-full object-cover z-0" 
-                src="/toyoda-landing.webp"
+                src="/ipal1.webp"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
