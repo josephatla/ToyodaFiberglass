@@ -170,10 +170,10 @@ export const PRODUCTS: Product[] = [
       'Mudah Dipindahkan'
     ],
     gallery: [
+      '/toilet3.jpeg',
+      '/toilet4.jpeg',
       '/toilet1.png',
       '/toilet2.png',
-      '/toilet3.png',
-      '/toilet4.png',
     ]
   },
   {
@@ -189,7 +189,9 @@ export const PRODUCTS: Product[] = [
       'Reflektif'
     ],
     gallery: [
-      '/atap.jpg',
+      '/atap1.jpeg',
+      '/atap2.jpeg',
+      '/atap3.jpeg',
     ]
   },
   {

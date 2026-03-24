@@ -49,13 +49,13 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-square sm:aspect-video lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+              className="relative rounded-3xl overflow-hidden shadow-2xl"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent"></div>
               <img 
                 alt="Industrial Fiberglass" 
                 className="w-full h-full object-cover" 
-                src="/toyoda-landing.webp"
+                src="/ipal1.webp"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
