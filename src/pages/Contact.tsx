@@ -14,7 +14,13 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.');
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}`)}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
