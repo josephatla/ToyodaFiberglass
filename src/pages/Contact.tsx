@@ -1,8 +1,18 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, MessageCircle, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram } from 'lucide-react';
 import { CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
+
+// Objek style khusus untuk mengatasi layar berkedip/lompat di akhir animasi pada Mobile/Safari
+const antiFlicker = {
+  WebkitBackfaceVisibility: "hidden",
+  backfaceVisibility: "hidden",
+  WebkitPerspective: 1000,
+  perspective: 1000,
+  WebkitTransform: "translate3d(0,0,0)",
+  transform: "translate3d(0,0,0)",
+} as const;
 
 export default function Contact() {
   const [formData, setFormData] = React.useState({
@@ -25,105 +35,79 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col w-full py-12 md:py-20">
+    <div className="flex flex-col w-full py-12 md:py-20 overflow-x-hidden">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 relative">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            style={antiFlicker}
             className="flex items-center justify-center gap-2 text-blue-600 mb-4"
           >
             <Mail className="size-5" />
             <span className="font-bold uppercase tracking-widest text-xs">Hubungi Kami</span>
           </motion.div>
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            style={antiFlicker}
             className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6"
           >
             Mari Berdiskusi Tentang Proyek Anda
           </motion.h1>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            style={antiFlicker}
             className="text-slate-600 text-lg"
           >
             Tim ahli kami siap membantu memberikan solusi fiberglass terbaik untuk kebutuhan industri atau residensial Anda.
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="grid lg:grid-cols-3 gap-12 items-start relative">
           {/* Contact Info Cards */}
-          <div className="lg:col-span-1 flex flex-col gap-6">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="size-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-6">
-                <Phone className="size-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Telepon Resmi</h3>
-              <p className="text-slate-500 text-sm mb-4">Hubungi kami langsung untuk respon cepat.</p>
-              <div className="flex flex-col gap-2">
-                <a href={`tel:${CONTACT_INFO.phone}`} className="text-blue-600 font-bold hover:underline">{CONTACT_INFO.phone}</a>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="p-8 rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="size-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-6">
-                <Mail className="size-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Email Resmi</h3>
-              <p className="text-slate-500 text-sm mb-4">Kirimkan detail proyek atau pertanyaan Anda.</p>
-              <a href={`mailto:${CONTACT_INFO.email}`} className="text-blue-600 font-bold hover:underline">{CONTACT_INFO.email}</a>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="size-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-6">
-                <Instagram className="size-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Instagram</h3>
-              <p className="text-slate-500 text-sm mb-4">Ikuti kami untuk update terbaru.</p>
-              <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline">@toyoda.fiberglass</a>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="p-8 rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="size-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-6">
-                <MapPin className="size-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Alamat Kantor</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{CONTACT_INFO.address}</p>
-            </motion.div>
+          <div className="lg:col-span-1 flex flex-col gap-6 relative">
+            {[
+              { icon: Phone, title: 'Telepon Resmi', desc: 'Hubungi kami langsung untuk respon cepat.', content: CONTACT_INFO.phone, link: `tel:${CONTACT_INFO.phone}` },
+              { icon: Mail, title: 'Email Resmi', desc: 'Kirimkan detail proyek atau pertanyaan Anda.', content: CONTACT_INFO.email, link: `mailto:${CONTACT_INFO.email}` },
+              { icon: Instagram, title: 'Instagram', desc: 'Ikuti kami untuk update terbaru.', content: '@toyoda.fiberglass', link: CONTACT_INFO.instagram },
+              { icon: MapPin, title: 'Alamat Kantor', desc: CONTACT_INFO.address, content: '', link: null }
+            ].map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: -15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                style={antiFlicker}
+                className="p-8 rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all group"
+              >
+                <div className="size-12 rounded-xl bg-blue-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <item.icon className="size-6" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-500 text-sm mb-4 leading-relaxed">{item.desc}</p>
+                {item.link ? (
+                  <a href={item.link} target={item.link.startsWith('http') ? "_blank" : "_self"} rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline">
+                    {item.content}
+                  </a>
+                ) : null}
+              </motion.div>
+            ))}
           </div>
 
           {/* Contact Form */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 15 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-xl"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={antiFlicker}
+            className="lg:col-span-2 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-xl relative z-10"
           >
             <h3 className="text-2xl font-bold text-slate-900 mb-8">Kirim Pesan</h3>
             <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6">
@@ -185,10 +169,12 @@ export default function Contact() {
 
         {/* Map Section */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[400px] md:h-[500px]"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          style={antiFlicker}
+          className="mt-20 rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[400px] md:h-[500px] relative z-0"
         >
           <iframe 
             src={CONTACT_INFO.mapsUrl}

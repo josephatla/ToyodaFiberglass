@@ -89,7 +89,7 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute -top-6 -left-6 size-32 bg-blue-600/10 rounded-full blur-3xl z-0"></div>
-              <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] z-10">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl z-10">
                 <img 
                   className="w-full h-full object-cover" 
                   src="/keunggulan.jpeg"
