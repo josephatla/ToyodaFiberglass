@@ -6,7 +6,9 @@ import Container from '@/src/components/Container';
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
+    // Tambahan: overflow-x-hidden untuk mencegah flicker layar HP saat elemen masuk dari samping
+    <div className="flex flex-col w-full overflow-x-hidden">
+      
       {/* Hero Section */}
       <section className="relative w-full py-12 md:py-20 lg:py-32 overflow-hidden">
         <Container>
@@ -64,18 +66,19 @@ export default function Home() {
       </section>
 
       {/* About & Features Section */}
-      <section className="py-16 md:py-24  backdrop-blur-sm">
+      {/* Dihapus: backdrop-blur-sm karena menyebabkan flicker pada iOS/Mobile */}
+      <section className="py-16 md:py-24 bg-blue-50/60">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }} // Tambahan: trigger animasi saat lebih banyak masuk ke layar
               transition={{ duration: 0.6 }}
               className="relative"
             >
               <div className="absolute -top-6 -left-6 size-32 bg-blue-600/10 rounded-full blur-3xl"></div>
-              <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl ">
                 <img 
                   className="w-full h-full object-cover" 
                   src="/keunggulan.jpeg"
@@ -92,7 +95,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
               className="flex flex-col gap-6"
             >
@@ -130,7 +133,7 @@ export default function Home() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-6"
           >
             <div className="max-w-2xl">
@@ -186,12 +189,12 @@ export default function Home() {
       </section>
 
       {/* News Section */}
-      <section className="py-16 md:py-24 backdrop-blur-sm">
+      <section className="py-16 md:py-24 bg-slate-50/50">
         <Container>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="flex items-center justify-between mb-10 md:mb-12"
           >
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Artikel & Pembaruan Terbaru</h2>
@@ -205,7 +208,7 @@ export default function Home() {
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: idx * 0.1 }}
                 className="flex flex-col gap-4 group cursor-pointer"
               >
@@ -233,7 +236,7 @@ export default function Home() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="bg-blue-600 p-8 sm:p-12 md:p-16 rounded-[2rem] flex flex-col items-center text-center relative overflow-hidden shadow-2xl shadow-blue-600/20"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
@@ -245,9 +248,6 @@ export default function Home() {
               <Link to="/contact" className="h-14 px-10 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg">
                 <Mail className="size-5" /> Hubungi Kami
               </Link>
-              <button className="h-14 px-10 bg-blue-700 text-white border border-white/20 font-bold rounded-xl hover:bg-blue-800 transition-all w-full sm:w-auto">
-                Unduh Brosur
-              </button>
             </div>
           </motion.div>
         </Container>
