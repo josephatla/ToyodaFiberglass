@@ -68,7 +68,7 @@ export default function Home() {
               <img 
                 alt="Industrial Fiberglass" 
                 className="w-full h-full object-cover z-0" 
-                src="/ipal1.webp"
+                src="/toyoda-landing.webp"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
@@ -157,44 +157,51 @@ export default function Home() {
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
             {PRODUCTS.map((product, idx) => (
+              /* PEMISAHAN: motion.div HANYA untuk animasi, tidak ada styling visual di sini */
               <motion.div 
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
                 style={antiFlicker}
-                className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all relative z-0"
               >
-                <Link to={`/products/${product.id}`} className="absolute inset-0 z-0" />
-                <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative z-10 pointer-events-none">
-                  <img 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-                    src={product.image} 
-                    alt={product.title}
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow relative z-10">
-                  <h4 className="text-lg font-bold group-hover:text-blue-600 transition-colors text-slate-900 mb-2">{product.title}</h4>
-                  <p className="text-sm text-slate-500 mb-6 line-clamp-2 leading-relaxed">{product.description}</p>
-                  
-                  <div className="mt-auto flex flex-row gap-3 relative z-20">
-                    <a 
-                      href={`https://wa.me/628111999777?text=Halo, saya tertarik dengan produk ${product.title}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Pesan Sekarang
-                    </a>
-                    <Link 
-                      to={`/products/${product.id}`}
-                      className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-white text-blue-600 border border-blue-600 text-xs font-bold hover:bg-blue-50 transition-all"
-                    >
-                      Details <ArrowRight className="size-3" />
-                    </Link>
+                {/* PEMISAHAN: Card div biasa untuk memegang style visual. WebkitMaskImage mencegah Safari membocorkan gambar saat border-radius */}
+                <div 
+                  className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all relative z-0"
+                  style={{ ...antiFlicker, WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                >
+                  <Link to={`/products/${product.id}`} className="absolute inset-0 z-0" />
+                  <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative z-10 pointer-events-none">
+                    <img 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                      style={antiFlicker} // Paksa gambar tetap di mode GPU
+                      src={product.image} 
+                      alt={product.title}
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow relative z-10">
+                    <h4 className="text-lg font-bold group-hover:text-blue-600 transition-colors text-slate-900 mb-2">{product.title}</h4>
+                    <p className="text-sm text-slate-500 mb-6 line-clamp-2 leading-relaxed">{product.description}</p>
+                    
+                    <div className="mt-auto flex flex-row gap-3 relative z-20">
+                      <a 
+                        href={`https://wa.me/628111999777?text=Halo, saya tertarik dengan produk ${product.title}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Pesan Sekarang
+                      </a>
+                      <Link 
+                        to={`/products/${product.id}`}
+                        className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-white text-blue-600 border border-blue-600 text-xs font-bold hover:bg-blue-50 transition-all"
+                      >
+                        Details <ArrowRight className="size-3" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -221,28 +228,36 @@ export default function Home() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
             {NEWS.map((item, idx) => (
-              <motion.article 
+              <motion.div 
                 key={item.id}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
                 style={antiFlicker}
-                className="flex flex-col gap-4 group cursor-pointer relative"
               >
-                <div className="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative z-0">
-                  <img 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0" 
-                    src={item.image} 
-                    alt={item.title}
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 relative">
-                  <h3 className="text-lg md:text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors text-slate-900">{item.title}</h3>
-                  <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed">{item.description}</p>
-                </div>
-              </motion.article>
+                <article 
+                  className="flex flex-col h-full gap-4 group cursor-pointer relative"
+                  style={antiFlicker}
+                >
+                  <div 
+                    className="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative z-0"
+                    style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                  >
+                    <img 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0" 
+                      style={antiFlicker}
+                      src={item.image} 
+                      alt={item.title}
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2 relative">
+                    <h3 className="text-lg md:text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors text-slate-900">{item.title}</h3>
+                    <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed">{item.description}</p>
+                  </div>
+                </article>
+              </motion.div>
             ))}
           </div>
         </Container>
