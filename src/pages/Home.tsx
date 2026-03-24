@@ -4,18 +4,18 @@ import { PRODUCTS, NEWS } from '@/src/constants';
 import { Link } from 'react-router-dom';
 import Container from '@/src/components/Container';
 
-// Perubahan Teknis untuk Memperbaiki Flicker di Mobile:
-// 1. Menambahkan style={{ translateZ: 0 }} pada elemen motion utama. 
-//    Ini memaksa browser mobile menggunakan Hardware Acceleration (GPU rasterization) 
-//    yang menghilangkan kedipan saat scroll.
-// 2. Menambahkan style={{ willChange: 'opacity, transform' }} untuk memberi tahu browser
-//    properti apa yang akan dianimasikan agar browser bisa bersiap.
-// 3. Mengurangi sedikit jarak x/y (-30 menjadi -20, dll) agar pergeseran tidak terlalu ekstrem saat scroll.
-// 4. Memastikan z-index yang benar pada elemen relatif.
+// Objek style khusus untuk mengatasi layar berkedip/lompat di akhir animasi pada Mobile/Safari
+const antiFlicker = {
+  WebkitBackfaceVisibility: "hidden",
+  backfaceVisibility: "hidden",
+  WebkitPerspective: 1000,
+  perspective: 1000,
+  WebkitTransform: "translate3d(0,0,0)",
+  transform: "translate3d(0,0,0)",
+} as const;
 
 export default function Home() {
   return (
-    // Memastikan overflow-x-hidden tetap ada di parent paling luar
     <div className="flex flex-col w-full overflow-x-hidden">
       
       {/* Hero Section */}
@@ -23,11 +23,10 @@ export default function Home() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div 
-              initial={{ opacity: 0, y: 15 }} // Jarak y dikurangi sedikit
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} // Menggunakan easeOutExpo yang lebih mulus
-              // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-              style={{ translateZ: 0, willChange: 'opacity, transform' }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              style={antiFlicker}
               className="flex flex-col gap-6 items-start text-left z-10 relative"
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-blue-100">
@@ -59,18 +58,17 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div 
-              initial={{ opacity: 0, scale: 0.98 }} // Jarak scale dikurangi sedikit
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-              style={{ translateZ: 0, willChange: 'opacity, transform' }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              style={antiFlicker}
               className="relative aspect-square sm:aspect-video lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl z-0"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent z-10"></div>
               <img 
                 alt="Industrial Fiberglass" 
                 className="w-full h-full object-cover z-0" 
-                src="/toyoda-landing.webp"
+                src="/ipal1.webp"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
@@ -83,12 +81,11 @@ export default function Home() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div 
-              initial={{ opacity: 0, x: -20 }} // Jarak x dikurangi sedikit
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.1 }} // Amount dikurangi sedikit agar trigger lebih cepat
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-              style={{ translateZ: 0, willChange: 'opacity, transform' }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={antiFlicker}
               className="relative"
             >
               <div className="absolute -top-6 -left-6 size-32 bg-blue-600/10 rounded-full blur-3xl z-0"></div>
@@ -107,12 +104,11 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div 
-              initial={{ opacity: 0, x: 20 }} // Jarak x dikurangi sedikit
+              initial={{ opacity: 0, x: 15 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-              style={{ translateZ: 0, willChange: 'opacity, transform' }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={antiFlicker}
               className="flex flex-col gap-6 relative"
             >
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight">Keunggulan Toyoda Fiber</h2>
@@ -150,9 +146,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-            style={{ translateZ: 0, willChange: 'opacity, transform' }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            style={antiFlicker}
             className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-6 relative"
           >
             <div className="max-w-2xl">
@@ -164,12 +159,11 @@ export default function Home() {
             {PRODUCTS.map((product, idx) => (
               <motion.div 
                 key={product.id}
-                initial={{ opacity: 0, y: 20 }} // Jarak y dikurangi sedikit
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }} // EaseOutExpo
-                // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-                style={{ translateZ: 0, willChange: 'opacity, transform' }}
+                transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
+                style={antiFlicker}
                 className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all relative z-0"
               >
                 <Link to={`/products/${product.id}`} className="absolute inset-0 z-0" />
@@ -216,9 +210,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-            style={{ translateZ: 0, willChange: 'opacity, transform' }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            style={antiFlicker}
             className="flex items-center justify-between mb-10 md:mb-12 relative"
           >
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Artikel & Pembaruan Terbaru</h2>
@@ -233,9 +226,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-                style={{ translateZ: 0, willChange: 'opacity, transform' }}
+                transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
+                style={antiFlicker}
                 className="flex flex-col gap-4 group cursor-pointer relative"
               >
                 <div className="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative z-0">
@@ -260,12 +252,11 @@ export default function Home() {
       <section className="py-16 md:py-24 relative">
         <Container>
           <motion.div 
-            initial={{ opacity: 0, scale: 0.97 }} // Jarak scale dikurangi sedikit
+            initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            // FIX MOBIL FLICKER: Force GPU acceleration & Will-Change hint
-            style={{ translateZ: 0, willChange: 'opacity, transform' }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={antiFlicker}
             className="bg-blue-600 p-8 sm:p-12 md:p-16 rounded-[2rem] flex flex-col items-center text-center relative overflow-hidden shadow-2xl shadow-blue-600/20"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl z-0"></div>
