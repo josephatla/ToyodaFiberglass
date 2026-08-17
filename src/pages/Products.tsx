@@ -82,14 +82,25 @@ export default function Products() {
                   
                   <div className="mt-auto flex flex-row gap-3 relative z-20">
                     <a 
-                      href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Halo, saya tertarik dengan produk ${product.title}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Pesan Sekarang
-                    </a>
+  href={`https://wa.me/628111999777?text=Halo, saya tertarik dengan produk ${product.title}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all"
+  onClick={(e) => {
+    e.stopPropagation(); // Keep your existing logic
+    
+    // Fire the Google Ads conversion event
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'whatsapp_click',
+        product_name: product.title,
+        button_location: 'product_card'
+      }
+    });
+  }}
+>
+  Pesan Sekarang
+</a>
                     <Link 
                       to={`/products/${product.id}`}
                       className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-white text-blue-600 border border-blue-600 text-xs font-bold hover:bg-blue-50 transition-all"

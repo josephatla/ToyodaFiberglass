@@ -33,13 +33,13 @@ export default function ProductDetail() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-14 px-8 bg-white text-blue-600 font-bold rounded-xl border-2 border-blue-600 hover:bg-blue-50 transition-all w-full sm:w-auto text-sm sm:text-base flex items-center justify-center gap-2"
-                >
-                  <MessageCircle className="size-5" /> Pesan Sekarang
-                </a>
+  href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="h-14 px-8 bg-white text-blue-600 font-bold rounded-xl border-2 border-blue-600 hover:bg-blue-50 transition-all w-full sm:w-auto text-sm sm:text-base flex items-center justify-center gap-2"
+>
+  <MessageCircle className="size-5" /> Pesan Sekarang
+</a>
               </div>
             </motion.div>
             <motion.div 

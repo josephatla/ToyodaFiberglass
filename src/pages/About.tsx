@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
-import { Info, Eye, Rocket, Grid, Verified, Leaf, Shield, Award } from 'lucide-react';
-import { PROJECTS } from '@/src/constants';
+import { Info, Eye, Rocket, Verified, Leaf, Shield, Award, Stamp, Component } from 'lucide-react';
 import Container from '@/src/components/Container';
 
 export default function About() {
@@ -90,16 +89,18 @@ export default function About() {
             viewport={{ once: true }}
             className="py-12 md:py-20 px-6 md:px-12 rounded-[2rem] md:rounded-[3rem] bg-white border-2 border-blue-100 shadow-xl"
           >
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-5xl mx-auto text-center">
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Komitmen pada Standar & Kualitas</h2>
               <p className="text-slate-600 mb-12 md:mb-16 text-base sm:text-lg">Produk kami telah melalui pengujian ketat dan memiliki sertifikasi internasional untuk menjamin keamanan dan ketahanan proyek Anda.</p>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
+              {/* UPDATED GRID CLASSES HERE */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
                 {[
                   { icon: Verified, label: 'ISO 9001:2015' },
                   { icon: Shield, label: 'OHSAS 18001:2007' },
                   { icon: Leaf, label: 'ISO 14001:2015' },
                   { icon: Award, label: 'HALAL CERTIFICATION' },
-                  { icon: Verified, label: 'TKDN' }
+                  { icon: Component, label: 'TKDN' },
+                  { icon: Stamp, label: 'SNI' } // DITAMBAHKAN SNI
                 ].map((cert, idx) => (
                   <motion.div 
                     key={idx}

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
 import { CONTACT_INFO } from '@/src/constants';
+import TagManager from 'react-gtm-module';
 
 export default function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Halo, saya ingin bertanya tentang produk Toyoda Fiber.`;
@@ -17,6 +18,16 @@ export default function WhatsAppButton() {
       whileTap={{ scale: 0.9 }}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center size-14 md:size-16 bg-[#25D366] text-white rounded-full shadow-2xl shadow-[#25D366]/40 hover:bg-[#128C7E] transition-colors"
       aria-label="Chat on WhatsApp"
+      onClick={() => {
+        // Fire the Google Ads conversion event
+        TagManager.dataLayer({
+          dataLayer: {
+            event: 'whatsapp_click',
+            product_name: 'General Inquiry',
+            button_location: 'floating_button'
+          }
+        });
+      }}
     >
       <svg 
         viewBox="0 0 24 24" 
