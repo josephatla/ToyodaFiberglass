@@ -162,7 +162,7 @@ export default function Home() {
                   IPAL (Instalasi Pengolahan Air Limbah) adalah sistem yang digunakan untuk mengolah dan memproses air limbah agar kandungan pencemar di dalamnya berkurang sebelum air tersebut dibuang ke lingkungan atau digunakan kembali sesuai peruntukannya. Air limbah dapat berasal dari berbagai sumber, seperti pabrik, rumah sakit, hotel, restoran, perkantoran, kawasan perumahan, dan fasilitas komersial.
                 </p>
                 <p>
-                  PT TOYODA FIBER INDONESIA disini hadir untuk menyediakan sistem yang sudah bersertifikat ISO, KAN, TKDN, dan SNI sehingga kalian dapat memercayai kami sebagai vendor yang berkualitas dan menjamin hasil limbah kalian dapat sesuai dengan peraturan nasional maupun internasional.
+                  PT TOYODA FIBER INDONESIA disini hadir untuk menyediakan sistem yang sudah bersertifikat <strong>ISO, KAN, TKDN, dan SNI</strong> sehingga kalian dapat memercayai kami sebagai vendor yang berkualitas dan menjamin hasil limbah kalian dapat sesuai dengan peraturan nasional maupun internasional.
                 </p>
                 <p>
                   PT TOYODA FIBER INDONESIA berkomitmen untuk dapat melestarikan lingkungan INDONESIA supaya menjadi lebih baik untuk kedepannya dan tidak ada lagi namanya pencemaran lingkungan.

@@ -25,7 +25,7 @@ export default function Footer() {
               <span className="text-lg font-bold text-slate-900">PT. Toyoda Fiber Indonesia</span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed">
-              Produsen terkemuka tangki fiberglass industri dan sistem pengolahan berkualitas tinggi di Indonesia. Berkomitmen pada keunggulan dan daya tahan sejak 2010.
+              Vendor IPAL No 1 di Indonesia. Kami sudah sangat berpengalaman selama 10 tahun lebih, kami pun sudah bersertifikat ISO, KAN, TKDN, dan SNI sehingga Percayakan Proyek Anda Kepada Kami.
             </p>
           </div>
 

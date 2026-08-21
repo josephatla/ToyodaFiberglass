@@ -1,9 +1,18 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, Shield, HardHat, Factory, Mail, MessageCircle, X } from 'lucide-react';
+import { CheckCircle, Shield, HardHat, Factory, Mail, MessageCircle, X, ArrowRight, Verified, Lightbulb } from 'lucide-react';
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { MAIN_PRODUCTS, OTHER_PRODUCTS, CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
+
+const antiFlicker = {
+  WebkitBackfaceVisibility: "hidden",
+  backfaceVisibility: "hidden",
+  WebkitPerspective: 1000,
+  perspective: 1000,
+  WebkitTransform: "translate3d(0,0,0)",
+  transform: "translate3d(0,0,0)",
+} as const;
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -60,32 +69,59 @@ export default function ProductDetail() {
       </section>
 
       {/* Key Benefits */}
-      <section className="py-16 md:py-24 bg-blue-50/50 backdrop-blur-sm">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50/40 to-white relative overflow-hidden">
         <Container>
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
+          >
+            <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider border border-blue-100 mb-3">
+              Keunggulan Produk
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
+              Mengapa Memilih {product.title} Kami?
+            </h2>
+          </motion.div>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Mengapa Memilih {product.title} Kami?</h2>
-            <p className="text-slate-600 text-sm sm:text-base">Keunggulan teknik dan material yang membuat produk kami menjadi standar industri.</p>
+            <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
+              {[
+                { icon: CheckCircle, title: 'Standar Internasional', desc: 'Didukung oleh standar ISO, KAN, TKDN, dan SNI untuk setiap produk.' },
+                { icon: CheckCircle, title: 'Harga Terbaik dan Kompetitif', desc: 'Garansi dan dukungan teknis berkelanjutan untuk kepuasan Anda.' },
+                { icon: Verified, title: 'Kualitas Terjamin', desc: 'Kontrol kualitas ketat mengikuti standar ISO memastikan setiap tangki memenuhi persyaratan internasional.' },
+                { icon: HardHat, title: 'Layanan Profesional', desc: 'Dukungan teknik ahli mulai dari konsultasi awal dan desain hingga pemasangan di lokasi.' },
+                { icon: Lightbulb, title: 'Pelayanan Terbaik dan Responsif', desc: 'Kami siap melayani anda 24/7 dengan respon cepat dan solutif.' }
+              ].map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className={`flex flex-col sm:flex-row items-start gap-4 p-6 md:p-7 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 group ${
+                    idx === 4 ? 'sm:col-span-2 sm:items-center' : ''
+                  }`}
+                >
+                  <div className="size-12 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white">
+                    <item.icon className="size-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-base md:text-lg mb-1.5 text-slate-900">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs md:text-sm leading-relaxed text-slate-500">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {product.benefits?.map((benefit, idx) => (
-              <motion.div 
-                key={idx} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-blue-100 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center"
-              >
-                <CheckCircle className="size-8 sm:size-10 text-blue-600 mb-4" />
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-relaxed">{benefit}</h3>
-              </motion.div>
-            ))}
-          </div>
         </Container>
       </section>
 
