@@ -109,7 +109,7 @@ export default function Contact() {
             style={antiFlicker}
             className="lg:col-span-2 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-xl relative z-10"
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Kirim Pesan</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-8">Kirim pesan untuk menjadi Reseller</h3>
             <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-slate-700">Nama Lengkap</label>

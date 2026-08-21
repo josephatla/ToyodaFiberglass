@@ -16,9 +16,9 @@ export default function About() {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="relative p-8 md:p-16 max-w-3xl"
+              className="relative p-8 md:p-16 max-w-5xl"
             >
-              <h1 className="text-blue-600 text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-4">Inovasi Fiber untuk Masa Depan Konstruksi</h1>
+              <h1 className="text-blue-600 text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-4">Vendor IPAL Terpercaya Untuk Memajukan Indonesia Menjadi Ramah Lingkungan</h1>
               <p className="text-slate-600 text-lg md:text-xl font-normal mb-6">Membangun masa depan yang lebih kuat dan berkelanjutan melalui teknologi fiber terdepan di Indonesia.</p>
             </motion.div>
           </div>
@@ -41,19 +41,19 @@ export default function About() {
               <h2 className="text-slate-900 text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Tentang PT. Toyoda Fiber Indonesia</h2>
               <div className="space-y-6 text-slate-600 leading-relaxed text-base sm:text-lg">
                 <p>PT. Toyoda Fiber Indonesia berdiri sejak tahun 2010 dengan mengutamakan kepuasan pelanggan sehingga membuat kami berkembang hingga saat ini.</p>
-                <p>Menggunakan bahan-bahan berkualitas dan terjamin, menjadikan produk berkualitas serta didukung oleh Paten Merek juga standar SNI, ISO, KAN. Produk kami juga telah digunakan di beberapa perusahaan dan industri ternama.</p>
-                <p>Kami memprioritaskan kepuasan pelanggan, kualitas produk, garansi, dan layanan purna jual yang prima untuk setiap solusi fiberglass yang kami berikan.</p>
+                <p>Menggunakan bahan-bahan berkualitas dan terjamin, menjadikan produk berkualitas serta didukung oleh Paten Merek juga standar ISO, KAN, TKDN, dan SNI. Produk kami juga telah digunakan di beberapa perusahaan dan industri ternama.</p>
+                <p>Kami menjamin bahwa produk kami kuat, tahan lama, dan terpercaya. Point kami dalam membuat perusahaan ini adalah jujur dalam segala sehingga kami pasti akan memberikan produk dan sistem ipal yang terbaik kepada anda.</p>
               </div>
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="p-6 bg-blue-50 rounded-2xl border border-blue-100 shadow-sm">
                   <Eye className="size-8 text-blue-600 mb-4" />
                   <h3 className="font-bold text-slate-900 mb-2 text-lg">Visi Kami</h3>
-                  <p className="text-sm text-slate-600">Menjadi penyedia solusi fiber nomor satu di Asia Tenggara, mendukung infrastruktur berkelanjutan.</p>
+                  <p className="text-sm text-slate-600">Menjadi penyedia produk dan sistem IPAL Industri nomor satu di Asia Tenggara, mendukung infrastruktur berkelanjutan.</p>
                 </div>
                 <div className="p-6 bg-blue-50 rounded-2xl border border-blue-100 shadow-sm">
                   <Rocket className="size-8 text-blue-600 mb-4" />
                   <h3 className="font-bold text-slate-900 mb-2 text-lg">Misi Kami</h3>
-                  <p className="text-sm text-slate-600">Menghadirkan inovasi teknologi serat yang meningkatkan efisiensi dan kekuatan konstruksi bangunan.</p>
+                  <p className="text-sm text-slate-600">Menghadirkan sistem IPAL dan produk lainnya dengan inovasi teknologi modern yang meningkatkan efisiensi dan juga kekuatan konstruksi bangunan.</p>
                 </div>
               </div>
             </motion.div>

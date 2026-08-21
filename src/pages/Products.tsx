@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ShoppingCart, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PRODUCTS, CONTACT_INFO } from '@/src/constants';
+import { MAIN_PRODUCTS, OTHER_PRODUCTS, CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
 
 // Objek style khusus untuk mengatasi layar berkedip/lompat di akhir animasi pada Mobile/Safari
@@ -14,6 +14,8 @@ const antiFlicker = {
   WebkitTransform: "translate3d(0,0,0)",
   transform: "translate3d(0,0,0)",
 } as const;
+
+const allProducts = [...MAIN_PRODUCTS, ...OTHER_PRODUCTS];
 
 export default function Products() {
   return (
@@ -51,7 +53,7 @@ export default function Products() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-          {PRODUCTS.map((product, idx) => (
+          {allProducts.map((product, idx) => (
             /* PEMISAHAN: motion.div HANYA untuk animasi pembungkus luar */
             <motion.div
               key={product.id}
@@ -78,7 +80,7 @@ export default function Products() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow relative z-10">
                   <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{product.title}</h3>
-                  <p className="text-sm text-slate-500 mb-6 line-clamp-3 leading-relaxed">{product.description}</p>
+                  <p className="text-sm text-slate-500 mb-6 line-clamp-3 leading-relaxed whitespace-pre-line" dangerouslySetInnerHTML={{ __html: product.description }}></p>
                   
                   <div className="mt-auto flex flex-row gap-3 relative z-20">
                     <a 

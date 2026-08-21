@@ -1,15 +1,5 @@
 import { LucideIcon, Factory, Verified, Lightbulb, HardHat, ArrowRight, CheckCircle, Mail, Phone, MapPin, Globe, Share2, Rss, Clock, Calendar, Eye, Rocket, Grid, Shield, Leaf, Award, Headset, LayoutGrid, ShieldCheck, Menu, Search, ChevronLeft, ChevronRight, AtSign } from 'lucide-react';
 
-export interface Product {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  benefits?: string[];
-  gallery?: string[];
-}
-
 export interface NewsItem {
   id: string;
   title: string;
@@ -29,186 +19,132 @@ export interface Project {
   category: string;
 }
 
-export const PRODUCTS: Product[] = [
+export interface Product {
+  id: string;
+  title: string;
+  subtitle?: string; 
+  shortdesc: string;
+  description: string;
+  image: string;
+  category: string;
+  benefits?: string[];
+  gallery?: string[];
+}
+
+export const MAIN_PRODUCTS: Product[] = [
   {
-    id: 'ipal-wwtp-stp',
-    title: 'IPAL - WWTP, STP',
-    description: 'Sistem Instalasi Pengolahan Air Limbah (IPAL) berbahan fiberglass dari Toyoda dirancang untuk memberikan solusi pengolahan limbah yang efisien, tahan lama, dan ramah lingkungan. Menggunakan material Fiber Reinforced Plastic (FRP), sistem ini memiliki ketahanan tinggi terhadap korosi, ringan, namun tetap kokoh, sehingga sangat cocok digunakan pada sektor industri, perumahan, hingga fasilitas publik.',
-    image: '/ipal.jpg',
-    category: 'Industrial',
-    benefits: [
-      'Tahan Terhadap Korosi',
-      'Tahan Lama & Minim Perawatan',
-      'Mudah Dibersihkan',
-      'Material Tebal & Kuat'
-    ],
-    gallery: [
-      '/ipal1.webp',
-      '/ipal2.webp',
-      '/ipal3.webp',
-      '/ipal8.webp',
-      '/ipal4.webp',
-      '/ipal5.webp',
-      '/ipal6.webp',
-      '/ipal7.webp',
-      '/ipal9.webp',
-      '/ipal10.webp',
-    ]
+    id: "ipal-medis",
+    title: "IPAL MEDIS",
+    subtitle: "Vendor IPAL Rumah Sakit & IPAL Puskesmas",
+    shortdesc: "<strong>IPAL Medis</strong> (Instalasi Pengolahan Air Limbah Medis) adalah sistem yang digunakan untuk mengolah air limbah yang dihasilkan dari aktivitas fasilitas pelayanan kesehatan, seperti rumah sakit, klinik, laboratorium, puskesmas, dan fasilitas kesehatan lainnya.\n\nAir limbah dari fasilitas kesehatan memiliki karakteristik yang dapat berbeda dengan limbah domestik biasa. Oleh karena itu, <strong>PT TOYODA FIBER INDONESIA</strong> hadir untuk merancang sistem untuk mempertimbangkan sumber limbah, debit air limbah, karakteristik pencemar, serta kebutuhan pengolahan pada masing-masing fasilitas.",
+    description: "<strong>IPAL Medis</strong> (Instalasi Pengolahan Air Limbah Medis) adalah sistem yang digunakan untuk mengolah air limbah yang dihasilkan dari aktivitas fasilitas pelayanan kesehatan, seperti rumah sakit, klinik, laboratorium, puskesmas, dan fasilitas kesehatan lainnya.\nAir limbah dari fasilitas kesehatan memiliki karakteristik yang dapat berbeda dengan limbah domestik biasa. Oleh karena itu, PT TOYODA FIBER INDONESIA hadir untuk merancang sistem untuk mempertimbangkan sumber limbah, debit air limbah, karakteristik pencemar, serta kebutuhan pengolahan pada masing-masing fasilitas. \n\n<strong>Mengapa IPAL Medis Diperlukan?</strong> \nKegiatan pelayanan kesehatan menghasilkan air limbah dari berbagai aktivitas, seperti kamar mandi, ruang perawatan, laboratorium, laundry, ruang tindakan, serta kegiatan operasional lainnya. Jika tidak dikelola dengan baik, air limbah tersebut dapat memberikan dampak terhadap lingkungan.\n\n <strong>PT TOYODA FIBER INDONESIA</strong> menyediakan solusi IPAL untuk kebutuhan fasilitas kesehatan dengan mempertimbangkan kondisi dan kebutuhan setiap proyek. Sistem dapat dirancang berdasarkan kapasitas, karakteristik limbah, kondisi lokasi, dan kebutuhan operasional.\nKami mengutamakan penggunaan material fiberglass yang sesuai untuk kebutuhan konstruksi tangki serta memberikan solusi yang praktis, kuat, dan mudah dalam pemeliharaan.",
+    benefits: ["Tahan Terhadap Korosi", "Tahan Lama & Minim Perawatan", "Mudah Dibersihkan", "Material Tebal & Kuat"],
+    image: "/ipalmedis.png",
+    category: "Kesehatan"
   },
   {
-    id: 'paneltank',
-    title: 'PANELTANK',
-    description: 'Paneltank fiberglass Toyoda merupakan tangki penyimpanan modular yang fleksibel dan dapat disesuaikan dengan kebutuhan kapasitas Anda. Dirancang dengan sistem panel terpisah yang mudah dirakit, produk ini menjadi solusi ideal untuk penyimpanan air bersih, limbah, maupun cairan lainnya di berbagai sektor.',
-    image: '/paneltank.jpg',
-    category: 'Industrial',
-    benefits: [
-      'Anti Korosi',
-      'Tahan Lama',
-      'Mudah Dibersihkan',
-      'Desain Modular'
-    ],
-    gallery: [
-      '/paneltank1.png',
-      '/paneltank2.png',
-      '/paneltank3.png',
-      '/paneltank4.png',
-    ]
+    id: "ipal-domestik",
+    title: "IPAL DOMESTIK",
+    subtitle: "Solusi Pengolahan Limbah Domestik",
+    shortdesc: "<strong>IPAL Domestik</strong> (Instalasi Pengolahan Air Limbah Domestik) adalah sistem yang dirancang untuk mengolah air limbah yang berasal dari aktivitas sehari-hari manusia sebelum dialirkan ke lingkungan sesuai dengan ketentuan yang berlaku.\n\nAir limbah domestik dapat berasal dari berbagai aktivitas seperti toilet, kamar mandi, wastafel, dapur, laundry, serta kegiatan operasional pada bangunan dan fasilitas umum. Apabila tidak dikelola dengan baik, air limbah tersebut dapat menimbulkan pencemaran lingkungan dan mengganggu kualitas sumber air.",
+    description: "<strong>IPAL Domestik</strong> (Instalasi Pengolahan Air Limbah Domestik) merupakan sistem yang dirancang untuk mengolah air limbah yang berasal dari aktivitas sehari-hari manusia sebelum dialirkan ke lingkungan sesuai dengan ketentuan yang berlaku.\nAir limbah domestik dapat berasal dari berbagai aktivitas seperti toilet, kamar mandi, wastafel, dapur, laundry, serta kegiatan operasional pada bangunan dan fasilitas umum. Apabila tidak dikelola dengan baik, air limbah tersebut dapat menimbulkan pencemaran lingkungan dan mengganggu kualitas sumber air. \n\n<strong>Mengapa IPAL Domestik Dibutuhkan?</strong>\nSetiap bangunan dengan aktivitas manusia menghasilkan air limbah. Pengelolaan yang tepat diperlukan agar limbah tersebut tidak langsung mencemari lingkungan.\nIPAL Domestik membantu melalui proses pengolahan yang bertujuan untuk mengurangi kandungan pencemar dalam air limbah sebelum masuk ke tahap pembuangan atau pengelolaan selanjutnya.\n\n<strong>Dimana Saja IPAL DOMESTIK Dapat Digunakan?</strong>\nIPAL Domestik dapat digunakan untuk berbagai kebutuhan, antara lain:\n🏢 Perkantoran\n🏨 Hotel dan penginapan\n🏘️ Perumahan dan apartemen\n🏫 Sekolah dan institusi pendidikan\n🏥 Fasilitas kesehatan\n🏬 Pusat perbelanjaan dan fasilitas komersial\n🏭 Area industri untuk limbah domestik\n🏗️ Kawasan dan fasilitas umum\n\n<strong>Solusi IPAL DOMESTIK PT TOYODA FIBER INDONESIA\nPT TOYODA FIBER INDONESIA</strong> menyediakan solusi <strong>IPAL Domestik</strong> yang dapat disesuaikan dengan kebutuhan masing-masing proyek. Perencanaan sistem mempertimbangkan kapasitas pengolahan, karakteristik air limbah, ketersediaan area, serta kebutuhan operasional.",
+    benefits: ["Tahan Terhadap Korosi", "Tahan Lama & Minim Perawatan", "Mudah Dibersihkan", "Material Tebal & Kuat"],
+    image: "/ipaldomestik.jpeg",
+    category: "Residensial & Komersial"
   },
+  {
+    id: "chemical-tank",
+    title: "CHEMICAL TANK",
+    subtitle: "Penyimpanan Bahan Kimia Aman",
+    shortdesc: "<strong>Chemical Tank</strong> merupakan tangki khusus untuk menyimpan dan menampung bahan kimia cair yang digunakan dalam berbagai proses industri, pengolahan air, dan pengolahan air limbah. <strong>PT TOYODA FIBER INDONESIA</strong> menyediakan Chemical Tank berbahan fiberglass/FRP yang dapat disesuaikan dengan kebutuhan kapasitas dan karakteristik bahan kimia yang digunakan.",
+    description: "<strong>Chemical Tank</strong> merupakan tangki khusus untuk menyimpan dan menampung bahan kimia cair yang digunakan dalam berbagai proses industri, pengolahan air, dan pengolahan air limbah. <strong>PT TOYODA FIBER INDONESIA</strong> menyediakan Chemical Tank berbahan fiberglass/FRP yang dapat disesuaikan dengan kebutuhan kapasitas dan karakteristik bahan kimia yang digunakan.\n\n🧪<strong> Apa Fungsi Chemical Tank?</strong>\nChemical tank dapat digunakan untuk menyimpan berbagai jenis bahan kimia, misalnya bahan kimia yang digunakan untuk:\n⚗️ Proses koagulasi dan flokulasi\n💧 Pengolahan air dan air limbah\n🦠 Proses desinfeksi\n⚖️ Penyesuaian pH\n🏭 Berbagai kebutuhan proses industri\n\n Jenis bahan kimia yang disimpan harus disesuaikan dengan karakteristik kimia, konsentrasi, temperatur, serta spesifikasi material tangki.\n\nPT TOYODA FIBER INDONESIA menyediakan solusi Chemical Tank fiberglass/FRP untuk berbagai kebutuhan industri dan sistem pengolahan air maupun air limbah.Tangki dapat dirancang dengan mempertimbangkan:\nJenis bahan kimia → Kapasitas → Konsentrasi → Temperatur → Sistem pemasangan → Kondisi lokasi\n\nDengan demikian, chemical tank tidak hanya berfungsi sebagai tempat penyimpanan, tetapi menjadi bagian penting dari sistem pengelolaan bahan kimia yang aman dan terintegrasi.",
+    benefits: ["Tahan Terhadap Korosi", "Tahan Lama & Minim Perawatan", "Mudah Dibersihkan", "Material Tebal & Kuat"],
+    image: "/chemicaltank.png",
+    category: "Industrial"
+  },
+  {
+    id: "paneltank",
+    title: "PANELTANK TOYODA",
+    subtitle: "Sistem Penyimpanan Air Modular",
+    shortdesc: "<strong>Paneltank Fiberglass Toyoda</strong> merupakan tangki penyimpanan modular yang fleksibel dan dapat disesuaikan dengan kebutuhan kapasitas Anda. Dirancang dengan sistem panel terpisah yang mudah dirakit, produk ini menjadi solusi ideal untuk penyimpanan air bersih, limbah, maupun cairan lainnya di berbagai sektor. Dirancang dengan presisi teknik tinggi untuk memberikan solusi penyimpanan air yang paling andal dan tahan lama di pasar Indonesia.",
+    description: "Panel Tank merupakan sistem tangki penyimpanan yang tersusun dari beberapa panel yang dirakit menjadi satu konstruksi tangki. Sistem modular ini memungkinkan ukuran dan kapasitas tangki disesuaikan dengan kebutuhan proyek serta kondisi area pemasangan.\nPanel Tank berbahan Fiberglass Reinforced Plastic (FRP) dapat digunakan sebagai solusi penyimpanan air untuk berbagai kebutuhan, baik pada fasilitas komersial, industri, maupun proyek infrastruktur.\n\n💧 <strong>Fungsi Panel Tank</strong>\nPanel Tank dapat dimanfaatkan untuk menyimpan berbagai jenis air sesuai dengan spesifikasi dan peruntukannya, seperti:\nAir bersih\nAir baku\nAir proses industri\nAir hasil pengolahan\nCadangan air pemadam kebakaran\nKebutuhan utilitas gedung\nKebutuhan penyimpanan air pada kawasan dan fasilitas tertentu\n\n🔧<strong> Mengapa Memilih Panel Tank Fiberglass?</strong>\nSistem panel memberikan fleksibilitas dalam proses perencanaan dan pemasangan. Panel dapat dikirim dalam bentuk komponen kemudian dirakit di lokasi proyek, sehingga dapat menjadi solusi untuk area yang memiliki akses masuk terbatas atau membutuhkan tangki dengan kapasitas besar.\nBeberapa karakteristik yang menjadi keunggulan material FRP antara lain:\n✓ Tahan terhadap korosi\n✓ Konstruksi modular dan fleksibel\n✓ Kapasitas dapat disesuaikan\n✓ Relatif mudah dalam proses pengiriman dan pemasangan\n✓ Cocok untuk berbagai kebutuhan penyimpanan\n✓ Perawatan relatif praktis\n\n🏭 <strong>Panel Tank PT TOYODA FIBER INDONESIA</strong>\nPT TOYODA FIBER INDONESIA menyediakan Panel Tank berbahan fiberglass/FRP yang dapat disesuaikan dengan kebutuhan setiap proyek.\nDalam menentukan desain tangki, beberapa hal yang dapat dipertimbangkan antara lain kapasitas penyimpanan, dimensi, lokasi pemasangan, akses menuju lokasi, jenis air yang disimpan, serta kebutuhan sistem pendukung.\nDengan konsep konstruksi modular, Panel Tank dapat menjadi pilihan untuk proyek yang membutuhkan tangki penyimpanan berkapasitas besar dengan konfigurasi yang fleksibel.",
+    image: "/paneltank.png",
+    category: "Industrial",
+    benefits: ['Anti Korosi', 'Tahan Lama', 'Mudah Dibersihkan', 'Desain Modular'],
+    gallery: ['/paneltank1.png', '/paneltank2.png', '/paneltank3.png', '/paneltank4.png']
+  }
+];
+
+export const OTHER_PRODUCTS: Product[] = [
   {
     id: 'septictank',
     title: 'SEPTICTANK',
+    shortdesc: '',
     description: 'Septic tank fiberglass ramah lingkungan yang dirancang untuk pengolahan limbah rumah tangga secara optimal. Kedap air dan dilengkapi sistem filtrasi modern serta disinfektan, produk ini memastikan limbah terurai dengan baik tanpa mencemari lingkungan sekitar.',
-    image: '/septictank.jpg',
+    image: '/septic.png',
     category: 'Residensial',
-    benefits: [
-      'Instalasi Cepat & Praktis',
-      'Minim Perawatan',
-      'Sistem Desinfektan',
-      'Ramah Lingkungan',
-      'Kuat & Ringan',
-      'Mudah Dipasang',
-      'Bergaransi'
-    ],
-    gallery: [
-      '/septictank1.png',
-      '/septictank2.png',
-      '/septictank3.png',
-      
-    ]
+    benefits: ['Instalasi Cepat & Praktis', 'Minim Perawatan', 'Sistem Desinfektan', 'Ramah Lingkungan', 'Kuat & Ringan', 'Mudah Dipasang', 'Bergaransi'],
+    gallery: ['/septictank.jpg', '/septictank1.png', '/septictank2.png', '/septictank3.png']
   },
   {
     id: 'storagetank',
     title: 'STORAGETANK',
+    shortdesc: '',
     description: 'Storage tank berbahan fiberglass (FRP) yang dirancang untuk menyimpan berbagai jenis cairan, mulai dari air hingga bahan kimia. Dengan kombinasi kekuatan dan ketahanan terhadap korosi, tangki ini menjadi pilihan ideal untuk kebutuhan industri maupun komersial.',
     image: '/storagetank.jpg',
     category: 'Industrial',
-    benefits: [
-      'Tahan Korosi',
-      'Material Kuat & Tebal',
-      'Bergaransi',
-      'Tahan Tekanan'
-    ],
-    gallery: [
-      '/storagetank1.png',
-      '/storagetank2.png',
-      '/storagetank3.png',
-    ]
+    benefits: ['Tahan Korosi', 'Material Kuat & Tebal', 'Bergaransi', 'Tahan Tekanan'],
+    gallery: ['/storagetank1.png', '/storagetank2.png', '/storagetank3.png']
   },
   {
     id: 'biostp-mini',
     title: 'BIOSTP MINI',
+    shortdesc: '',
     description: 'BIOSTP Mini adalah tangki pengolahan limbah modern dengan teknologi multi-proses yang dirancang oleh PT Toyoda Fiber Indonesia. Telah bersertifikasi SNI dan ISO, produk ini mampu mengolah limbah domestik menjadi lebih ramah lingkungan dengan struktur yang lebih tebal dan kuat dibandingkan septic tank konvensional.',
-    image: '/biostpmini.webp',
+    image: '/biostp.png',
     category: 'Residensial',
-    benefits: [
-      'Bersertifikasi SNI & ISO',
-      'Ramah Lingkungan',
-      'Ketebalan 5,6mm',
-      'Lebih Kuat Dari Produk Sejenis'
-    ],
-    gallery: [
-      '/biostp1.webp',
-      '/biostp2.webp',
-      '/biostp3.webp',
-      '/biostp4.webp',
-      '/biostp5.webp',
-      '/biostp6.webp',
-    ]
+    benefits: ['Bersertifikasi SNI & ISO', 'Ramah Lingkungan', 'Ketebalan 5,6mm', 'Lebih Kuat Dari Produk Sejenis'],
+    gallery: ['/biostp1.webp', '/biostp2.webp', '/biostp3.webp', '/biostp4.webp', '/biostp5.webp', '/biostp6.webp']
   },
   {
     id: 'talang',
     title: 'TALANG',
+    shortdesc: '',
     description: 'Talang fiberglass berkualitas tinggi yang dirancang untuk mengatasi masalah kebocoran pada sistem drainase bangunan maupun pabrik. Dengan perlindungan UV dan daya tahan tinggi, produk ini tetap awet dan tidak mudah rusak meski digunakan dalam jangka panjang.',
-    image: '/talang.jpg',
+    image: '/talang.png',
     category: 'Industrial',
-    benefits: [
-      'Tahan UV',
-      'Warna Tidak Mudah Pudar',
-      'Tahan Lama',
-      'Anti Bocor'
-    ],
-    gallery: [
-      '/talang1.webp',
-      '/talang2.webp',
-      '/talang3.webp',
-      '/talang4.webp',
-      '/talang5.webp',
-      '/talang6.webp',
-    ]
+    benefits: ['Tahan UV', 'Warna Tidak Mudah Pudar', 'Tahan Lama', 'Anti Bocor'],
+    gallery: ['/talang.jpg', '/talang1.webp', '/talang2.webp', '/talang3.webp', '/talang4.webp', '/talang5.webp', '/talang6.webp']
   },
   {
     id: 'toilet-portable',
     title: 'TOILET PORTABLE',
+    shortdesc: '',
     description: 'Toilet portable berbahan fiberglass yang praktis, kuat, dan mudah dipindahkan. Dilengkapi dengan sistem Bio Septic Tank, produk ini sangat cocok digunakan untuk proyek konstruksi, event outdoor, hingga area wisata.',
-    image: '/toiletportable.jpg',
+    image: '/toilet.png',
     category: 'Komersial',
-    benefits: [
-      'Serbaguna & Ringan',
-      'Mudah Perawatan',
-      'Sistem Bio Septic Tank',
-      'Anti UV',
-      'Mudah Dipindahkan'
-    ],
-    gallery: [
-      '/toilet3.jpeg',
-      '/toilet4.jpeg',
-      '/toilet1.png',
-      '/toilet2.png',
-    ]
+    benefits: ['Serbaguna & Ringan', 'Mudah Perawatan', 'Sistem Bio Septic Tank', 'Anti UV', 'Mudah Dipindahkan'],
+    gallery: ['/toiletportable.jpg', '/toilet3.jpeg', '/toilet4.jpeg', '/toilet1.png', '/toilet2.png']
   },
   {
     id: 'atap',
     title: 'ATAP',
+    shortdesc: '',
     description: 'Atap fiberglass dengan teknologi Anti-Ultraviolet yang memberikan perlindungan optimal terhadap panas dan radiasi matahari. Selain kuat dan tahan lama, produk ini juga membantu menghemat energi dengan mengurangi panas yang masuk ke dalam bangunan.',
-    image: '/atap.jpg',
+    image: '/atap.png',
     category: 'Industrial',
-    benefits: [
-      'Anti UV',
-      'Struktur Kuat',
-      'Hemat Energi',
-      'Reflektif'
-    ],
-    gallery: [
-      '/atap1.jpeg',
-      '/atap2.jpeg',
-      '/atap3.jpeg',
-    ]
+    benefits: ['Anti UV', 'Struktur Kuat', 'Hemat Energi', 'Reflektif'],
+    gallery: ['/atap.jpg', '/atap1.jpeg', '/atap2.jpeg', '/atap3.jpeg']
   },
   {
     id: 'grp-tank',
     title: 'GRP TANK',
+    shortdesc: '',
     description: 'GRP Tank Toyoda merupakan solusi tangki panel berkualitas tinggi dengan desain fleksibel dan material anti karat. Dilengkapi fitur lengkap seperti ventilasi, tangga, dan perlindungan anti UV, produk ini dirancang untuk memenuhi berbagai kebutuhan penyimpanan cairan.',
-    image: '/grptank.jpg',
+    image: '/grp.png',
     category: 'Industrial',
-    benefits: [
-      'Material Berkualitas',
-      'Anti Karat',
-      'Bergaransi',
-      'Anti UV & Anti Lumut'
-    ],
-    gallery: [
-      '/grp1.webp',
-    ]
+    benefits: ['Material Berkualitas', 'Anti Karat', 'Bergaransi', 'Anti UV & Anti Lumut'],
+    gallery: ['/grptank.jpg', '/grp1.webp']
   }
 ];
 
@@ -241,7 +177,7 @@ Email: toyodafiber.id@gmail.com
 Website: www.toyodafibreglass.com`,
     image: '/artikel3.jpg',
     category: 'Artikel',
-    date: '30 April 2025',
+    date: '21 Agustus 2026',
     readTime: '5 Menit'
   },
   {
@@ -270,7 +206,7 @@ Email: toyodafiber.id@gmail.com
 Website: www.toyodafibreglass.com`,
     image: '/artikel2.jpg',
     category: 'Inovasi',
-    date: '30 April 2025',
+    date: '21 Agustus 2026',
     readTime: '4 Menit'
   },
   {
@@ -301,7 +237,7 @@ Email: toyodafiber.id@gmail.com
 Website: www.toyodafibreglass.com`,
     image: '/artikel1.jpg',
     category: 'Artikel',
-    date: '30 April 2025',
+    date: '21 Agustus 2026',
     readTime: '5 Menit'
   }
 ];

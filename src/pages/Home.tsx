@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Verified, Lightbulb, HardHat, CheckCircle, Mail } from 'lucide-react';
-import { NEWS } from '@/src/constants'; // 'PRODUCTS' dihapus karena diganti dengan 'MAIN_PRODUCTS' di bawah
+import { MAIN_PRODUCTS, OTHER_PRODUCTS, NEWS } from '@/src/constants';
 import { Link } from 'react-router-dom';
 import Container from '@/src/components/Container';
 import TagManager from 'react-gtm-module';
@@ -15,87 +15,9 @@ const antiFlicker = {
   transform: "translate3d(0,0,0)",
 } as const;
 
-// Data 4 Produk Utama
-const MAIN_PRODUCTS = [
-  {
-    id: "ipal-medis",
-    title: "IPAL MEDIS",
-    subtitle: "Vendor IPAL Rumah Sakit & IPAL Puskesmas",
-    description: (
-      <>
-        <strong>IPAL Medis</strong> (Instalasi Pengolahan Air Limbah Medis) adalah sistem yang digunakan untuk mengolah air limbah yang dihasilkan dari aktivitas fasilitas pelayanan kesehatan, seperti rumah sakit, klinik, laboratorium, puskesmas, dan fasilitas kesehatan lainnya.<br /><br />
-        Air limbah dari fasilitas kesehatan memiliki karakteristik yang dapat berbeda dengan limbah domestik biasa. Oleh karena itu, <strong>PT TOYODA FIBER INDONESIA</strong> hadir untuk merancang sistem untuk mempertimbangkan sumber limbah, debit air limbah, karakteristik pencemar, serta kebutuhan pengolahan pada masing-masing fasilitas.
-      </>
-    ),
-    image: "/ipalmedis.png"
-  },
-  {
-    id: "ipal-domestik",
-    title: "IPAL DOMESTIK",
-    subtitle: null,
-    description: (
-      <>
-        <strong>IPAL Domestik</strong> (Instalasi Pengolahan Air Limbah Domestik) adalah sistem yang dirancang untuk mengolah air limbah yang berasal dari aktivitas sehari-hari manusia sebelum dialirkan ke lingkungan sesuai dengan ketentuan yang berlaku.<br /><br />
-        Air limbah domestik dapat berasal dari berbagai aktivitas seperti toilet, kamar mandi, wastafel, dapur, laundry, serta kegiatan operasional pada bangunan dan fasilitas umum. Apabila tidak dikelola dengan baik, air limbah tersebut dapat menimbulkan pencemaran lingkungan dan mengganggu kualitas sumber air.
-      </>
-    ),
-    image: "/ipaldomestik.jpeg"
-  },
-  {
-    id: "chemical-tank",
-    title: "CHEMICAL TANK",
-    subtitle: null,
-    description: (
-      <>
-        <strong>Chemical Tank</strong> merupakan tangki khusus untuk menyimpan dan menampung bahan kimia cair yang digunakan dalam berbagai proses industri, pengolahan air, dan pengolahan air limbah. PT TOYODA FIBER INDONESIA menyediakan Chemical Tank berbahan fiberglass/FRP yang dapat disesuaikan dengan kebutuhan kapasitas dan karakteristik bahan kimia yang digunakan.
-      </>
-    ),
-    image: "/chemicaltank.png" // Ganti dengan path gambar aslinya nanti
-  },
-  {
-    id: "paneltank",
-    title: "PANELTANK FIBERGLASS TOYODA",
-    subtitle: null,
-    description: (
-      <>
-        <strong>Paneltank fiberglass Toyoda</strong> merupakan tangki penyimpanan modular yang fleksibel dan dapat disesuaikan dengan kebutuhan kapasitas Anda. Dirancang dengan sistem panel terpisah yang mudah dirakit, produk ini menjadi solusi ideal untuk penyimpanan air bersih, limbah, maupun cairan lainnya di berbagai sektor. Dirancang dengan presisi teknik tinggi untuk memberikan solusi penyimpanan air yang paling andal dan tahan lama di pasar Indonesia.
-      </>
-    ),
-    image: "/paneltank.png" // Ganti dengan path gambar aslinya nanti
-  }
-];
-
-const OTHER_PRODUCTS = [
-  {
-    id: "water-tank-asahi",
-    title: "Water Tank Asahi",
-    subtitle: "Water Tank",
-    image: "/water-tank-asahi.jpg" // Sesuaikan dengan path gambar asli
-  },
-  {
-    id: "septic-tank-bioasahi",
-    title: "Septic Tank Bioasahi",
-    subtitle: "BA Series",
-    image: "/septic-tank-bioasahi.jpg" // Sesuaikan dengan path gambar asli
-  },
-  {
-    id: "roof-tank-asahi",
-    title: "Roof Tank Asahi",
-    subtitle: "Roof Tank",
-    image: "/roof-tank-asahi.jpg" // Sesuaikan dengan path gambar asli
-  },
-  {
-    id: "chemical-tank-asahi",
-    title: "Chemical Tank",
-    subtitle: "Chemical Tank",
-    image: "/chemical-tank-asahi.jpg" // Sesuaikan dengan path gambar asli
-  }
-];
-
 export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
-      
       {/* Hero Section */}
       <section className="relative w-full py-12 md:py-20 lg:py-32 overflow-hidden">
         <Container>
@@ -266,7 +188,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
-{/* Products Section (Alternating Cards & Other Products Grid) */}
+
+      {/* Products Section (Alternating Cards & Other Products Grid) */}
       <section id="products-section" className="py-16 md:py-24 bg-slate-50/30 relative">
         <Container>
           {/* Header Section Produk Utama */}
@@ -313,15 +236,18 @@ export default function Home() {
                     {product.subtitle && (
                       <h4 className="text-lg md:text-xl text-slate-700 mb-4">{product.subtitle}</h4>
                     )}
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-8">
-                      {product.description}
-                    </p>
+                    
+                    {/* INI KUNCI AGAR TAG <STRONG> TERBACA SEBAGAI BOLD */}
+                    <p 
+                      className="text-slate-600 text-sm md:text-base leading-relaxed mb-8 whitespace-pre-line"
+                      dangerouslySetInnerHTML={{ __html: product.shortdesc }}
+                    />
                     
                     <Link 
                       to={`/products/${product.id}`}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border-2 border-slate-900 font-bold uppercase tracking-widest text-sm hover:bg-slate-900 hover:text-white transition-all rounded-lg"
                     >
-                      DETAIL KLIK <ArrowRight className="size-4" />
+                      DETAIL <ArrowRight className="size-4" />
                     </Link>
                   </div>
                 </motion.div>
@@ -358,7 +284,6 @@ export default function Home() {
                     </span>
                   </div>
                   
-                  {/* Gunakan object-contain agar gambar produk tidak terpotong (seperti di referensi) */}
                   <div className="w-full h-48 flex items-center justify-center p-2">
                     <img 
                       src={item.image} 

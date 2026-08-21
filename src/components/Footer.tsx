@@ -1,7 +1,7 @@
 import { Factory, Mail, Phone, MapPin, Share2, Rss, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Container from '@/src/components/Container';
-import { CONTACT_INFO, PRODUCTS } from '@/src/constants';
+import { CONTACT_INFO, MAIN_PRODUCTS, OTHER_PRODUCTS } from '@/src/constants';
 
 export default function Footer() {
   return (
@@ -34,9 +34,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-slate-900">Produk Unggulan</h4>
+            <h4 className="font-bold mb-6 text-slate-900">Produk</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              {PRODUCTS.slice(0, 5).map(product => (
+              {MAIN_PRODUCTS.map(product => (
                 <li key={product.id}>
                   <Link to={`/products/${product.id}`} className="hover:text-blue-600 transition-colors font-medium">
                     {product.title}

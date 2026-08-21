@@ -2,12 +2,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, Shield, HardHat, Factory, Mail, MessageCircle, X } from 'lucide-react';
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { PRODUCTS, CONTACT_INFO } from '@/src/constants';
+import { MAIN_PRODUCTS, OTHER_PRODUCTS, CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const product = PRODUCTS.find(p => p.id === id) || PRODUCTS[0];
+  const allProducts = [...MAIN_PRODUCTS, ...OTHER_PRODUCTS];
+  const product = allProducts.find(p => p.id === id) || allProducts[0];
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -28,8 +29,8 @@ export default function ProductDetail() {
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight">
                 {product.title}
               </h1>
-              <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
-                {product.description} Dirancang dengan presisi teknik tinggi untuk memberikan solusi penyimpanan air yang paling andal dan tahan lama di pasar Indonesia.
+              <p className="text-base sm:text-m text-slate-600 mb-8 leading-relaxed whitespace-pre-line" 
+              dangerouslySetInnerHTML={{ __html: product.description }}>  
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
@@ -38,7 +39,7 @@ export default function ProductDetail() {
   rel="noopener noreferrer"
   className="h-14 px-8 bg-white text-blue-600 font-bold rounded-xl border-2 border-blue-600 hover:bg-blue-50 transition-all w-full sm:w-auto text-sm sm:text-base flex items-center justify-center gap-2"
 >
-  <MessageCircle className="size-5" /> Pesan Sekarang
+  <MessageCircle className="size-5" /> Hubungi Kami
 </a>
               </div>
             </motion.div>
