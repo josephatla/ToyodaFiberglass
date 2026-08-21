@@ -242,44 +242,13 @@ Website: www.toyodafibreglass.com`,
   }
 ];
 
-
-export const PROJECTS: Project[] = [
-  {
-    id: '1',
-    title: 'Pemasangan Panel Tank di Gedung Perkantoran Jakarta',
-    description: 'Penyediaan tangki air modular kapasitas besar untuk kebutuhan operasional gedung perkantoran di pusat bisnis Jakarta.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAiN9gZ9pxF2MDwsJGy4bRjcJNKLX4eXk8nXN-EuECkiTL2_fBCEIHfWcqX9DfxyYUVKVpN--jGGhK5fabcyqQ9oIiSn1X167zt4BfHTXIAmYZTRpbY060dEpoYR34N9MAuV-CSBdZiz8IFKvcxhvv4-b3JlUjSniJviog6XfgTXANYTWnqGSxlk85UCcvDomltBP6Uses00EnC1krsvpZ8CrtfvevmJQi5q58Dyq9jcGqEqMOdy-k0MPkY8hyaJx1dWDRNuowGmg',
-    category: 'Industrial'
-  },
-  {
-    id: '2',
-    title: 'Sistem IPAL Industri di Kawasan Industri Bekasi',
-    description: 'Instalasi pengolahan air limbah terpadu untuk pabrik manufaktur guna memenuhi standar baku mutu lingkungan.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAt4Qb5BYq0c_eHDJXxaSPjxTLUsxAffbOcy-PDO-Wmoycml4LUmVBvuHpz_-yzbc6ysL-4yhZLdchK6zb-OBcxo1k2g7SRaWRnxR9goLet1XhLGjKkuZqCAqapO2Cx_K8TygpbnA_SAG044BSruWc5_sXxRIOu2IYRcWuU4o4NfnKvprD9CKWcMVyvnIS7GdKt-L4DnXeSPwiFxzmvlLrnwSZMYk7kZnhzaP_TKZ5my7Zej8fsB8KvTCeQZX2ALyHuJ-n92seruQ',
-    category: 'Industrial'
-  },
-  {
-    id: '3',
-    title: 'Septic Tank Bio untuk Perumahan Elit di Tangerang',
-    description: 'Penyediaan sistem sanitasi ramah lingkungan untuk kawasan hunian modern yang mengutamakan kebersihan air tanah.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfkB4w63EPSxa9VhOWX78u_GeIenL7A_ykvZASL-Lyk7v2z1aNJ7hFrdDasHNLEJWrgtULTGJTqHa1l1KK6Eyzqz8HD11QPTbVqR7YqBtuMTrEN1cio2NaLA6VWlHfaiqekDbm_IS9xiy8URFRSW-nfvGPDPhlpJMGDUDmvUb651ZhFXNbQrf8taSUEss2C-TKTXSTOK4DH5Pth9s3wpGSSDUAECQjSEU-EL6cUDHwunCXrW3-FWOC1_XOdRvXJkowrcYldugM6Q',
-    category: 'Residensial'
-  },
-  {
-    id: '4',
-    title: 'Pemasangan Talang FRP di Gudang Logistik Surabaya',
-    description: 'Aplikasi talang fiberglass tahan korosi untuk sistem drainase atap gudang penyimpanan skala besar.',
-    image: 'https://picsum.photos/seed/project4/800/600',
-    category: 'Industrial'
-  }
-];
-
 export const CONTACT_INFO = {
   phone: '08111999777',
   whatsapp: '628111999777',
   email: 'toyodafiber.id@gmail.com',
   address: 'Jl. Raya Belimbing No.200, Belimbing, Kec. Kosambi, Kabupaten Tangerang, Banten 15212',
   instagram: 'https://www.instagram.com/toyoda.fiberglass?igsh=MWNva2RhMHZieTVkcA%3D%3D',
+  mapsLink: 'https://maps.app.goo.gl/v8A3FSfuyRRWN61W8',
   mapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.1423184650637!2d106.6673466758652!3d-6.097254093889163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a03ac10b63243%3A0xccd8219d6b7f42ee!2sPt.%20Toyoda%20Fiber%20Indonesia!5e0!3m2!1sen!2sid!4v1710480000000!5m2!1sen!2sid'
 };
 

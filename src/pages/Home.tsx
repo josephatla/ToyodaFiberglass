@@ -263,11 +263,7 @@ export default function Home() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             style={antiFlicker}
             className="flex flex-col gap-6 relative"
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-              Produk Lainnya
-            </h3>
-            
+          > 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {OTHER_PRODUCTS.map((item) => (
                 <Link 
@@ -326,27 +322,30 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
                 style={antiFlicker}
               >
-                <article 
-                  className="flex flex-col h-full gap-4 group cursor-pointer relative"
-                  style={antiFlicker}
-                >
-                  <div 
-                    className="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative z-0"
-                    style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                {/* BUNGKUS DENGAN LINK DI SINI */}
+                <Link to={`/news/${item.id}`} className="block h-full">
+                  <article 
+                    className="flex flex-col h-full gap-4 group cursor-pointer relative"
+                    style={antiFlicker}
                   >
-                    <img 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0" 
-                      style={antiFlicker}
-                      src={item.image} 
-                      alt={item.title}
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2 relative">
-                    <h3 className="text-lg md:text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors text-slate-900">{item.title}</h3>
-                    <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed">{item.description}</p>
-                  </div>
-                </article>
+                    <div 
+                      className="aspect-video rounded-xl overflow-hidden bg-slate-100 border border-slate-200 relative z-0"
+                      style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                    >
+                      <img 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0" 
+                        style={antiFlicker}
+                        src={item.image} 
+                        alt={item.title}
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2 relative">
+                      <h3 className="text-lg md:text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors text-slate-900">{item.title}</h3>
+                      <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed">{item.description}</p>
+                    </div>
+                  </article>
+                </Link>
               </motion.div>
             ))}
           </div>

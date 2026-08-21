@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Loader2 } from 'lucide-react';
 import { CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
 
@@ -22,16 +22,43 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  // Fungsi pengiriman menggunakan FormSubmit.co via AJAX
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create mailto link with form data
-    const mailtoLink = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}`)}`;
-    
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Endpoint '/ajax/' ditambahkan agar tidak pindah halaman
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_INFO.email}`, {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Nama: formData.name,
+          Email: formData.email,
+          Subjek: formData.subject,
+          Pesan: formData.message,
+          _subject: "Pesan Baru dari Website Toyoda!", // Subjek email yang masuk ke inbox Anda
+          _template: "table", // Format tabel agar email rapi
+          _captcha: "false" // Menonaktifkan captcha reCAPTCHA bawaan
+        })
+      });
+
+      if (response.ok) {
+        alert("Pesan Anda berhasil dikirim! Kami akan segera membalasnya.");
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Kosongkan form
+      } else {
+        alert("Maaf, terjadi kesalahan saat mengirim pesan. Silakan coba lagi.");
+      }
+    } catch (error) {
+      alert("Terjadi kesalahan pada sistem jaringan. Silakan coba lagi nanti.");
+    } finally {
+      setIsSubmitting(false); // Matikan loading
+    }
   };
 
   return (
@@ -75,7 +102,7 @@ export default function Contact() {
               { icon: Phone, title: 'Telepon Resmi', desc: 'Hubungi kami langsung untuk respon cepat.', content: CONTACT_INFO.phone, link: `tel:${CONTACT_INFO.phone}` },
               { icon: Mail, title: 'Email Resmi', desc: 'Kirimkan detail proyek atau pertanyaan Anda.', content: CONTACT_INFO.email, link: `mailto:${CONTACT_INFO.email}` },
               { icon: Instagram, title: 'Instagram', desc: 'Ikuti kami untuk update terbaru.', content: '@toyoda.fiberglass', link: CONTACT_INFO.instagram },
-              { icon: MapPin, title: 'Alamat Kantor', desc: CONTACT_INFO.address, content: '', link: null }
+              { icon: MapPin, title: 'Alamat Kantor', desc: CONTACT_INFO.address, content: 'Google Maps', link: CONTACT_INFO.mapsLink }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -110,7 +137,10 @@ export default function Contact() {
             className="lg:col-span-2 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-xl relative z-10"
           >
             <h3 className="text-2xl font-bold text-slate-900 mb-8">Kirim pesan untuk menjadi Reseller</h3>
+            
+            {/* Form diset untuk menjalankan handleSubmit bawaan React */}
             <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6">
+              
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-slate-700">Nama Lengkap</label>
                 <input 
@@ -122,6 +152,7 @@ export default function Contact() {
                   placeholder="Masukkan nama Anda"
                 />
               </div>
+              
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-bold text-slate-700">Alamat Email</label>
                 <input 
@@ -133,6 +164,7 @@ export default function Contact() {
                   placeholder="email@contoh.com"
                 />
               </div>
+              
               <div className="sm:col-span-2 flex flex-col gap-2">
                 <label className="text-sm font-bold text-slate-700">Subjek</label>
                 <input 
@@ -144,6 +176,7 @@ export default function Contact() {
                   placeholder="Subjek pesan"
                 />
               </div>
+              
               <div className="sm:col-span-2 flex flex-col gap-2">
                 <label className="text-sm font-bold text-slate-700">Pesan</label>
                 <textarea 
@@ -155,12 +188,22 @@ export default function Contact() {
                   placeholder="Tuliskan pesan Anda di sini..."
                 />
               </div>
+              
               <div className="sm:col-span-2">
                 <button 
                   type="submit"
-                  className="h-14 px-10 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
+                  disabled={isSubmitting}
+                  className="h-14 px-10 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
-                  <Send className="size-5" /> Kirim Pesan Sekarang
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="size-5 animate-spin" /> Mengirim...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="size-5" /> Kirim Pesan Sekarang
+                    </>
+                  )}
                 </button>
               </div>
             </form>
