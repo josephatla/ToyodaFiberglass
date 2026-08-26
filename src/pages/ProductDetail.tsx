@@ -41,6 +41,13 @@ export default function ProductDetail() {
               <p className="text-base sm:text-m text-slate-600 mb-8 leading-relaxed whitespace-pre-line" 
               dangerouslySetInnerHTML={{ __html: product.description }}>  
               </p>
+              <p className="text-base sm:text-m text-slate-600 mb-8 leading-relaxed">
+                <strong>Konsultasikan kebutuhan {product.title} Anda bersama PT Toyoda Fiber Indonesia. <br /><br />
+                📞 0811 1999 777 <br />
+                ✉️ toyodafiber.id@gmail.com <br />
+                📸 Instagram: @toyodafiber.id <br />
+                🌐 ipaltoyoda.com</strong>  
+              </p>              
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
   href={`https://wa.me/${CONTACT_INFO.whatsapp}`}

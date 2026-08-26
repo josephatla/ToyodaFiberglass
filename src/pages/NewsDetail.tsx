@@ -45,11 +45,12 @@ export default function NewsDetail() {
             </h1>
           </div>
 
-          {/* Article Content */}
+{/* Article Content */}
           <div className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-img:rounded-2xl">
-            <div className="whitespace-pre-wrap text-slate-700 leading-relaxed">
-              {article.content || article.description}
-            </div>
+            <div 
+              className="whitespace-pre-wrap text-slate-700 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: article.content || article.description }}
+            />
           </div>
         </motion.div>
       </Container>
