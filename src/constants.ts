@@ -295,7 +295,7 @@ Jika Anda sedang mencari solusi IPAL, STP, WWTP, atau tangki fiberglass, PT Toyo
 📞 0811-1999-9777
 🌐 ipaltoyoda.com
 📧 toyodafiber.id@gmail.com`,
-    image: '/artikel4.jpg', 
+    image: '/artikel4.png', 
     category: 'Edukasi',
     date: '24 Agustus 2026',
     readTime: '6 Menit'
@@ -350,7 +350,7 @@ Jangan memilih IPAL hanya berdasarkan harga. Pilih sistem berdasarkan kebutuhan,
 📞 0811-1999-9777
 🌐 ipaltoyoda.com
 📧 toyodafiber.id@gmail.com`,
-    image: '/artikel5.jpg', 
+    image: '/artikel5.png', 
     category: 'Panduan',
     date: '25 Agustus 2026',
     readTime: '5 Menit'
@@ -407,7 +407,7 @@ Jangan menentukan kapasitas dan spesifikasi hanya berdasarkan perkiraan. Konsult
 📞 0811-1999-9777
 🌐 ipaltoyoda.com
 📧 toyodafiber.id@gmail.com`,
-    image: '/artikel6.jpg', 
+    image: '/artikel6.png', 
     category: 'Teknologi',
     date: '26 Agustus 2026',
     readTime: '6 Menit'
