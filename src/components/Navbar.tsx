@@ -12,8 +12,8 @@ export default function Navbar() {
     { name: 'Beranda', href: '/' },
     { name: 'Produk', href: '/products' },
     { name: 'Galeri', href: '/gallery' },
-    { name: 'Artikel', href: '/news' },
-    { name: 'Tentang Kami', href: '/about' },
+    { name: 'Artikel', href: '/blog' },
+    { name: 'Tentang Kami', href: '/tentang-kami' },
     { name: 'Kontak', href: '/contact' },
   ];
 
@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="flex items-center justify-center size-10 rounded-lg text-blue-600 shadow-blue-600/20 overflow-hidden">
-              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
+              <img src="/logo.webp" alt="Logo" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
               <Factory className="size-6 hidden" />
             </div>
             <h2 className="text-lg sm:text-xl font-bold tracking-tight text-slate-900">PT. Toyoda Fiber Indonesia</h2>
@@ -54,6 +54,7 @@ export default function Navbar() {
             <button 
               className="md:hidden text-slate-900 p-2"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
             >
               {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
             </button>

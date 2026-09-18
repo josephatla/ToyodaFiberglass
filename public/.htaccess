@@ -1,8 +1,57 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # Redirect /vendor-ipal to /tentang-kami
+  RewriteRule ^vendor-ipal/?$ /tentang-kami [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  # ── Charset ────────────────────────────────────────────────
+  AddDefaultCharset UTF-8
+
+  # ── HSTS (HTTPS only) ──────────────────────────────────────
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # ── Clickjacking Protection ────────────────────────────────
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # ── MIME-Type Sniffing Protection ─────────────────────────
+  Header always set X-Content-Type-Options "nosniff"
+
+  # ── Referrer Policy ────────────────────────────────────────
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # ── Permissions Policy ─────────────────────────────────────
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+  # ── Content Security Policy ────────────────────────────────
+  # Permissive mode: allows Google Tag Manager, Google Ads, Fonts, WhatsApp
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net; object-src 'none'; base-uri 'self';"
+
+  # ── Cross-Origin Opener Policy ─────────────────────────────
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+
+  # ── Cache Static Assets ────────────────────────────────────
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|svg|woff|woff2|ttf)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # ── No-cache HTML pages ────────────────────────────────────
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# ── Enable Compression ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json application/xml image/svg+xml
 </IfModule>

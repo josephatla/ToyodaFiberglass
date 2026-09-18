@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Camera, X } from 'lucide-react';
 import { MAIN_GALLERY } from '@/src/constants';
 import Container from '@/src/components/Container';
+import SEO from '@/src/components/SEO';
 
 // Objek style khusus untuk mengatasi layar berkedip/lompat di akhir animasi pada Mobile/Safari
 const antiFlicker = {
@@ -19,6 +20,11 @@ export default function Gallery() {
 
   return (
     <div className="flex flex-col w-full py-12 md:py-20 overflow-x-hidden">
+      <SEO 
+        title="Galeri Proyek IPAL & Tangki Fiberglass | Toyoda Fiber"
+        description="Dokumentasi proyek pemasangan IPAL, panel tank, dan tangki fiberglass Toyoda Fiber di sektor industri, komersial, dan residensial."
+        url="https://ipaltoyoda.com/gallery"
+      />
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 relative">
           <motion.div 
@@ -73,6 +79,7 @@ export default function Gallery() {
                   src={image} 
                   alt={`Gallery image ${idx + 1}`} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0"
+                  loading="lazy"
                   style={antiFlicker}
                   referrerPolicy="no-referrer"
                 />

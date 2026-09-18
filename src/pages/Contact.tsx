@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, Instagram, Loader2 } from 'lucide-react';
 import { CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
+import SEO from '@/src/components/SEO';
 
 // Objek style khusus untuk mengatasi layar berkedip/lompat di akhir animasi pada Mobile/Safari
 const antiFlicker = {
@@ -24,13 +25,11 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  // Fungsi pengiriman menggunakan FormSubmit.co via AJAX
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Endpoint '/ajax/' ditambahkan agar tidak pindah halaman
       const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_INFO.email}`, {
         method: "POST",
         headers: { 
@@ -42,27 +41,32 @@ export default function Contact() {
           Email: formData.email,
           Subjek: formData.subject,
           Pesan: formData.message,
-          _subject: "Pesan Baru dari Website Toyoda!", // Subjek email yang masuk ke inbox Anda
-          _template: "table", // Format tabel agar email rapi
-          _captcha: "false" // Menonaktifkan captcha reCAPTCHA bawaan
+          _subject: "Pesan Baru dari Website Toyoda!",
+          _template: "table",
+          _captcha: "false"
         })
       });
 
       if (response.ok) {
         alert("Pesan Anda berhasil dikirim! Kami akan segera membalasnya.");
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Kosongkan form
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        alert("Maaf, terjadi kesalahan saat mengirim pesan. Silakan coba lagi.");
+        alert("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi via WhatsApp.");
       }
     } catch (error) {
-      alert("Terjadi kesalahan pada sistem jaringan. Silakan coba lagi nanti.");
+      alert("Terjadi kesalahan jaringan. Silakan hubungi via WhatsApp.");
     } finally {
-      setIsSubmitting(false); // Matikan loading
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="flex flex-col w-full py-12 md:py-20 overflow-x-hidden">
+    <div className="flex flex-col w-full py-12 md:py-20 overflow-x-hidden relative bg-slate-50/50">
+      <SEO 
+        title="Kontak & Konsultasi Proyek IPAL | Toyoda Fiber Tangerang"
+        description="Konsultasi kebutuhan IPAL, STP, dan tangki fiberglass. Hubungi 0811-1999-777 atau kunjungi kantor kami di Kosambi, Tangerang."
+        url="https://ipaltoyoda.com/contact"
+      />
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 relative">
           <motion.div 
@@ -96,7 +100,6 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12 items-start relative">
-          {/* Contact Info Cards */}
           <div className="lg:col-span-1 flex flex-col gap-6 relative">
             {[
               { icon: Phone, title: 'Telepon Resmi', desc: 'Hubungi kami langsung untuk respon cepat.', content: CONTACT_INFO.phone, link: `tel:${CONTACT_INFO.phone}` },
@@ -127,7 +130,6 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Contact Form */}
           <motion.div 
             initial={{ opacity: 0, x: 15 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -136,9 +138,7 @@ export default function Contact() {
             style={antiFlicker}
             className="lg:col-span-2 bg-white p-8 md:p-12 rounded-3xl border border-blue-100 shadow-xl relative z-10"
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Kirim pesan untuk menjadi Reseller</h3>
-            
-            {/* Form diset untuk menjalankan handleSubmit bawaan React */}
+            <h3 className="text-2xl font-bold text-slate-900 mb-8">Kirimkan Detail Kebutuhan Proyek Anda</h3>
             <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6">
               
               <div className="flex flex-col gap-2">
@@ -210,7 +210,6 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        {/* Map Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

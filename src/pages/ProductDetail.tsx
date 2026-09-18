@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, Shield, HardHat, Factory, Mail, MessageCircle, X, ArrowRight, Verified, Lightbulb } from 'lucide-react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { useState } from 'react';
-import { MAIN_PRODUCTS, OTHER_PRODUCTS, CONTACT_INFO } from '@/src/constants';
+import { MAIN_PRODUCTS, OTHER_PRODUCTS, JENIS_IPAL, CONTACT_INFO } from '@/src/constants';
 import Container from '@/src/components/Container';
+import SEO from '@/src/components/SEO';
 
 const antiFlicker = {
   WebkitBackfaceVisibility: "hidden",
@@ -16,14 +17,67 @@ const antiFlicker = {
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const allProducts = [...MAIN_PRODUCTS, ...OTHER_PRODUCTS];
-  const product = allProducts.find(p => p.id === id) || allProducts[0];
+  const allProducts = [...MAIN_PRODUCTS, ...OTHER_PRODUCTS, ...JENIS_IPAL];
+  const product = allProducts.find(p => p.id === id);
+
+  // Redirect to 404 if product slug is not found
+  if (!product) {
+    return <Navigate to="/404-not-found-page" replace />;
+  }
+
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const cleanDescription = product.description.replace(/<[^>]+>/g, '').slice(0, 150) + '...';
+
+  const productSchemaObj = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.title,
+    "image": `https://ipaltoyoda.com${product.image}`,
+    "description": cleanDescription,
+    "brand": {
+      "@type": "Brand",
+      "name": "PT Toyoda Fiber Indonesia"
+    }
+  };
+
+  const breadcrumbSchemaObj = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://ipaltoyoda.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Produk",
+        "item": "https://ipaltoyoda.com/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.title,
+        "item": `https://ipaltoyoda.com/products/${product.id}`
+      }
+    ]
+  };
+  
+  const schema = JSON.stringify([productSchemaObj, breadcrumbSchemaObj]);
 
   return (
     <div className="flex flex-col w-full">
-      {/* Product Hero */}
-      <section className="relative py-12 md:py-20 overflow-hidden">
+      <SEO 
+        title={`${product.title} | Toyoda Fiber`}
+        description={cleanDescription}
+        url={`https://ipaltoyoda.com/products/${product.id}`}
+        image={product.image}
+        schema={schema}
+      />
+      <section id="detail-produk" className="relative py-12 md:py-20 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div 
@@ -75,8 +129,7 @@ export default function ProductDetail() {
         </Container>
       </section>
 
-      {/* Key Benefits */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50/40 to-white relative overflow-hidden">
+      <section id="keunggulan-produk" className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50/40 to-white relative overflow-hidden">
         <Container>
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
@@ -132,9 +185,8 @@ export default function ProductDetail() {
         </Container>
       </section>
 
-      {/* Projects Gallery */}
       {product.gallery && product.gallery.length > 0 && (
-        <section className="py-16 md:py-24 bg-blue-50/50">
+        <section id="galeri-produk" className="py-16 md:py-24 bg-blue-50/50">
           <Container>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -165,8 +217,7 @@ export default function ProductDetail() {
         </section>
       )}
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-blue-50/50 backdrop-blur-sm">
+      <section id="kontak-produk" className="py-16 md:py-24 bg-blue-50/50 backdrop-blur-sm">
         <Container>
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -191,7 +242,6 @@ export default function ProductDetail() {
         </Container>
       </section>
 
-      {/* Image Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div

@@ -1,117 +1,446 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ipaltoyoda.com/</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/about</loc>
+    <loc>https://ipaltoyoda.com/tentang-kami</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news</loc>
+    <loc>https://ipaltoyoda.com/faq</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/blog</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/gallery</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/atap.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/atap1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/atap2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/atap3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostp6.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/biostpmini.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/cara-memilih-jasa-pembuatan-ipal-yang-tepat.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/chemicaltank.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/grp-tank-fiberglass-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/grp.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/grptank.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/instalasi-panel-tank-fiberglass-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/instalasi-panel-tank-fiberglass-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/instalasi-panel-tank-fiberglass-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/instalasi-panel-tank-fiberglass-4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipal.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipaldomestik.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipalhotel.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipalkomunal.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipallaundry.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipalmedis.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipalpuskesmas.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipalrestoran.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipalrumahsakit.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipaltambang.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/ipal_apa.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/jual-toilet-portable-fiberglass-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/jual-toilet-portable-fiberglass-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/jual-toilet-portable-fiberglass-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/jual-toilet-portable-fiberglass-4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/keunggulan-tangki-fiberglass-frp.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/keunggulan.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/logo.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-10.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-6.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-7.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-8.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-ipal-fiberglass-terbaik-9.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-storage-tank-kimia-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-storage-tank-kimia-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pabrik-storage-tank-kimia-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/paneltank.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pemasangan-septic-tank-biotech-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pemasangan-septic-tank-biotech-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pemasangan-septic-tank-biotech-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pentingnya-ipal-dalam-lingkungan.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/perbandingan-panel-tank-fiberglass-vs-beton.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-10.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-11.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-12.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-6.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-7.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-8.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/proyek-instalasi-ipal-stp-fiberglass-9.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/pt-toyoda-fiber-indonesia-produsen-fiberglass-berkualitas.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/septic.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/septictank.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/storage.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/storagetank.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang-air-fiberglass-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang-air-fiberglass-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang-air-fiberglass-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang-air-fiberglass-4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang-air-fiberglass-5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang-air-fiberglass-6.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/talang.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/toilet.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/toiletportable.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/toyoda-landing.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://ipaltoyoda.com/vendor-panel-tank-bersertifikat-keamanan-proyek.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/contact</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/ipal-medis</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/ipal-domestik</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/chemical-tank</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/paneltank</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/septictank</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/storagetank</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/biostp-mini</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/talang-air</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/toilet-portable</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/atap</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ipaltoyoda.com/products/grp-tank</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news/1</loc>
+    <loc>https://ipaltoyoda.com/products/ipal-rumah-sakit</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/products/ipal-komunal</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/products/ipal-laundry</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/products/ipal-restoran</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/products/ipal-tambang</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/products/ipal-puskesmas</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/products/ipal-hotel</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ipaltoyoda.com/blog/vendor-paneltank</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news/2</loc>
+    <loc>https://ipaltoyoda.com/blog/keunggulan-paneltank-fiberglass</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news/3</loc>
+    <loc>https://ipaltoyoda.com/blog/vendor-fiberglass</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news/4</loc>
+    <loc>https://ipaltoyoda.com/blog/pentingnya-ipal-dalam-lingkungan</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news/5</loc>
+    <loc>https://ipaltoyoda.com/blog/kontraktor-ipal</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ipaltoyoda.com/news/6</loc>
+    <loc>https://ipaltoyoda.com/blog/peran-fiberglass-dalam-sistem-ipal</loc>
+    <lastmod>2026-09-15T18:02:33.855Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
